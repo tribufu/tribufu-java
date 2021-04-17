@@ -1,0 +1,10 @@
+# Idea and Gradle Files
+
+.idea/
+.gradle/
+
+build/
+
+# Packaged Artifacts
+
+Release/
