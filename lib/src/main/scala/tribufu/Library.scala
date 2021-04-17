@@ -11,8 +11,7 @@ class Library {
     }
 
     /**
-     * A native method that is implemented by the 'TribuFu' native library, which is packaged with
-     * this library.
+     * A native method that is implemented by the 'TribuFu' native library.
      */
     //@native def Hello(): Int
 }
