@@ -5,7 +5,7 @@ package tribufu
 class Library {
     init()
 
-    private def init(){
+    private def init() {
         // Used to load the 'TribuFu' library on application startup.
         //System.loadLibrary("TribuFu")
     }
