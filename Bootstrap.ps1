@@ -1,19 +1,10 @@
 #!/usr/bin/env pwsh
 
-# Windows
-
 if ($IsWindows)
 {
 }
-
-# Mac
-
-elseif ($IsMacOS)
+else
 {
-}
-
-# Linux
-
-elseif ($IsLinux)
-{
+    sudo chmod +x ./gradlew
+    sudo chmod +x ./Scripts/Package.ps1
 }
