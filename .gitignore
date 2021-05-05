@@ -1,3 +1,12 @@
+# Binary Files
+
+Binaries/
+Intermediate/
+
+# Packaged Artifacts
+
+Release/
+
 # Idea and Gradle Files
 
 .idea/
@@ -5,6 +14,26 @@
 
 build/
 
-# Packaged Artifacts
+# Visual Studio Project Files
 
-Release/
+.vs/
+
+*.sln
+*.vcxproj
+*.csproj
+*.filters
+*.user
+
+# CMake Project Files
+
+Makefile
+*.make
+
+# Xcode Project Files
+
+*.xcodeproj
+*.xcworkspace
+
+# Mac OSX
+
+.DS_Store
