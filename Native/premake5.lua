@@ -1,4 +1,4 @@
-project "TribuFu.Jvm"
+project "TribuFu_jvm"
     location "."
     kind "SharedLib"
     language "C"
@@ -14,7 +14,9 @@ project "TribuFu.Jvm"
 
     includedirs
     {
-        "../Vendor/TribuFu"
+        "../Vendor/TribuFu",
+        "D:/Program Files/AdoptOpenJDK/jdk-11.0.10.9-hotspot/include",
+        "D:/Program Files/AdoptOpenJDK/jdk-11.0.10.9-hotspot/include/win32"
     }
 
     filter "system:windows"
