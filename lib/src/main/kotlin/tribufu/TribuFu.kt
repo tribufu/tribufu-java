@@ -9,7 +9,7 @@ class TribuFu {
     external fun Hello(input: String): String
 
     // Used to load the 'TribuFu' library on application startup.
-    fun LoadLibrary() {
-        System.loadLibrary("TribuFu")
+    init {
+        System.loadLibrary("TribuFu_jvm")
     }
 }
