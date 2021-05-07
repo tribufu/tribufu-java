@@ -1,9 +1,10 @@
 // Copyright (c) TribuFu. All Rights Reserved
 
-#include "Library.h"
+#include <jni.h>
 #include "TribuFu.h"
+#include "Library.h"
 
-char *Java_Hello(char *input)
+JNIEXPORT jstring JNICALL Java_tribufu_TribuFu_Hello(JNIEnv *, jobject, jstring)
 {
     char *result = Hello("C");
 

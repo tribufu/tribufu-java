@@ -9,7 +9,7 @@ public class TribuFu {
     public native String Hello(String input);
 
     // Used to load the 'TribuFu' library on application startup.
-    public void LoadLibrary() {
-        System.loadLibrary("TribuFu");
+    static {
+        System.loadLibrary("TribuFu_jvm");
     }
 }
