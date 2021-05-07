@@ -4,7 +4,7 @@
 #include "TribuFu.h"
 #include "Library.h"
 
-JNIEXPORT jstring JNICALL Java_tribufu_TribuFu_Hello(JNIEnv *, jobject, jstring)
+JNIEXPORT jstring JNICALL Java_tribufu_TribuFu_Hello(JNIEnv *env, jobject obj, jstring str)
 {
     char *result = Hello("C");
 
