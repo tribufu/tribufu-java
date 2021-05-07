@@ -3,6 +3,10 @@
 Binaries/
 Intermediate/
 
+# Cargo Files
+
+Cargo.lock
+
 # Packaged Artifacts
 
 Release/
