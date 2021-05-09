@@ -14,5 +14,5 @@ crate-type = ["cdylib", "rlib"]
 path = "Source/lib.rs"
 
 [dependencies]
-TribuFu = { path = "../DevKit.Rs", package = "TribuFu" }
+TribuFu = { path = "../DevKit" }
 jni = "0.19.0"
