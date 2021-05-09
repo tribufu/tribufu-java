@@ -1,6 +1,6 @@
 // Copyright (c) TribuFu. All Rights Reserved
 
-package tribufu.models
+package com.tribufu.sdk.models
 
 class User {
     var id = ""

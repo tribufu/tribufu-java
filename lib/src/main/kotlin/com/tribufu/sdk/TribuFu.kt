@@ -1,6 +1,6 @@
 // Copyright (c) TribuFu. All Rights Reserved
 
-package tribufu
+package com.tribufu.sdk
 
 class TribuFu {
     /**

@@ -6,7 +6,7 @@ plugins {
     `java-library`
 }
 
-group = "tribufu"
+group = "com.tribufu.sdk"
 version = "0.0.1"
 
 repositories {
