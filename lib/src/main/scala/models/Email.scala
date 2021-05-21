@@ -3,8 +3,8 @@
 package com.tribufu.sdk.models
 
 class Email {
-    var address = ""
-    var user_id = "1"
-    var confirmed = false
-    var primary = true
+    val address = ""
+    val user_id = "1"
+    val confirmed = false
+    val primary = true
 }
