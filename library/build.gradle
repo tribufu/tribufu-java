@@ -35,11 +35,6 @@ dependencies {
 
 tasks.named("jar") {
     manifest {
-        attributes("Implementation-Title": project.name, "Implementation-Version": project.version)
+        attributes("Implementation-Title": "TribuFu", "Implementation-Version": project.version)
     }
-}
-
-java {
-    withSourcesJar()
-    withJavadocJar()
 }
