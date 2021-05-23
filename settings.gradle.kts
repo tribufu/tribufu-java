@@ -1,2 +1,3 @@
-include("lib")
+include("library")
+include("android")
 rootProject.name = "TribuFu"

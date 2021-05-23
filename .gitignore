@@ -18,25 +18,10 @@ Release/
 
 build/
 
-# Visual Studio Project Files
+libs/
+jniLibs/
 
-.vs/
-
-*.sln
-*.vcxproj
-*.csproj
-*.filters
-*.user
-
-# CMake Project Files
-
-Makefile
-*.make
-
-# Xcode Project Files
-
-*.xcodeproj
-*.xcworkspace
+local.properties
 
 # Mac OSX
 
