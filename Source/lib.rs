@@ -1,4 +1,4 @@
-// Copyright (c) TribuFu. All Rights Reserved
+// Copyright (c) TribuFu. All Rights Reserved.
 
 //! Jvm bindings to TribuFu SDK.
 

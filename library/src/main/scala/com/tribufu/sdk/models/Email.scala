@@ -1,4 +1,4 @@
-// Copyright (c) TribuFu. All Rights Reserved
+// Copyright (c) TribuFu. All Rights Reserved.
 
 package com.tribufu.sdk.models
 
