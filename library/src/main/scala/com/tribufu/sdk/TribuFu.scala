@@ -7,7 +7,7 @@ class TribuFu {
 
     // Used to load the 'TribuFu' library on application startup.
     private def Init() {
-        System.loadLibrary("TribuFu_jvm")
+        System.loadLibrary("TribuFu_Jvm")
     }
 
     /**

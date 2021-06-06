@@ -1,5 +1,5 @@
 [package]
-name = "TribuFu-jvm"
+name = "TribuFu-Jvm"
 version = "0.0.1"
 description = "Jvm bindings to TribuFu SDK"
 repository = "https://github.com/TribuFu/SDK"
@@ -9,7 +9,7 @@ edition = "2018"
 publish = false
 
 [lib]
-name="TribuFu_jvm"
+name="TribuFu_Jvm"
 crate-type = ["cdylib", "rlib"]
 path = "Source/lib.rs"
 
