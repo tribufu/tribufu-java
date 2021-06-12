@@ -2,4 +2,4 @@
 
 package com.tribufu.sdk
 
-class Handler {}
+interface IHandler {}

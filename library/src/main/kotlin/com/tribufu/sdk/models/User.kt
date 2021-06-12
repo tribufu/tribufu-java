@@ -1,11 +1,12 @@
-// Copyright (c) TribuFu. All Rights Reserved.
+// Copyright (c) TribuFu. All Rights Reserved
 
 package com.tribufu.sdk.models
 
 class User {
-    val id = ""
-    val name = ""
+    var id = ""
+    var name = ""
     var display_name = ""
+    var password_hash = ""
     var role = Role.User
     var confirmed = false
     var two_factor_enabled = false
@@ -15,15 +16,15 @@ class User {
     var parental_control = false
     var profile_url = ""
     var public_birthday = false
-    var birthday = ""
+    var Birthday = ""
     var location = ""
     var timezone = ""
     var language = ""
     var currency = ""
     var theme = Theme.Light
     var ip_address = ""
-    val registration_ip_address = ""
-    val Joined = ""
+    var registration_ip_address = ""
+    var Joined = ""
     var Updated = ""
     var failed_logins = 0
     var about = ""
@@ -32,21 +33,33 @@ class User {
     var avatar_url = ""
     var background_url = ""
     var status = Status.Offline
-    var last_online = ""
-    var last_activity = ""
-    var last_post = ""
+    var LastOnline = ""
+    var LastActivity = ""
+    var LastPost = ""
     var warnings = 0
-    var last_warn = ""
+    var LastWarn = ""
 }
 
-object Role extends Enumeration {
-    val User, Bot, Helper, Tester, Developer, Moderator, Admin, Root = Value
+enum class Role {
+    User,
+    Bot,
+    Helper,
+    Tester,
+    Developer,
+    Moderator,
+    Admin,
+    Root
 }
 
-object Theme extends Enumeration {
-    val Light, Dark = Value
+enum class Theme {
+    Light,
+    Dark
 }
 
-object Status extends Enumeration {
-    val Offline, Away, Disturb, Online, Playing = Value
+enum class Status {
+    Offline,
+    Away,
+    Disturb,
+    Online,
+    Playing
 }

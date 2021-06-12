@@ -2,4 +2,4 @@
 
 package com.tribufu.sdk
 
-class System {}
+interface ISystem {}
