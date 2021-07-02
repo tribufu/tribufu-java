@@ -18,4 +18,4 @@ TribuFu = { path = "../DevKit" }
 jni = "0.19.0"
 
 [build-dependencies]
-Alnilam-Build = { path = "../Engine/Source/Framework/Build" }
+Alnilam-Build = { path = "../Engine/Source/Build" }
