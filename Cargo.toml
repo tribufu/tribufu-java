@@ -1,7 +1,7 @@
 [package]
-name = "TribuFu-Jvm"
+name = "tribufu-jvm"
 version = "0.0.1"
-description = "Jvm bindings to TribuFu SDK"
+description = "JVM bindings to TribuFu SDK"
 repository = "https://github.com/TribuFu/SDK"
 authors = ["TribuFu <contact@tribufu.com>"]
 license = "Apache-2.0"
@@ -14,7 +14,7 @@ crate-type = ["cdylib", "rlib"]
 path = "Source/lib.rs"
 
 [dependencies]
-TribuFu = { path = "../DevKit" }
+tribufu = { path = "../DevKit.Rs" }
 jni = "0.19.0"
 
 [build-dependencies]
