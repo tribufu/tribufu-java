@@ -23,6 +23,15 @@ jniLibs/
 
 local.properties
 
+# Java Extension Files
+
+.project
+.classpath
+
+bin/
+
+.settings/
+
 # Mac OSX
 
 .DS_Store
