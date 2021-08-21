@@ -1,5 +1,7 @@
 // Copyright (c) TribuFu. All Rights Reserved.
 
+use Alnilam_Build::*;
+
 fn main() {
-    Alnilam_Build::Target(None);
+    TargetRules::New(None).Build();
 }

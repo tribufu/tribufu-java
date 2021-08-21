@@ -23,7 +23,7 @@ use std::ffi::{CStr, CString};
 // This is the class that owns our static method. It's not going to be used,
 // but still must be present to match the expected signature of a static
 // native method.
-pub extern "system" fn Java_com_tribufu_sdk_TribuFu_Hello(
+pub extern "system" fn Java_com_tribufu_sdk_TribuFu_getVersion(
     env: JNIEnv,
     _: JClass,
     j_input: JString,

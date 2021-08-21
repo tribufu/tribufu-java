@@ -9,5 +9,5 @@ class TribuFu {
     }
 
     /** A native method that is implemented by the 'TribuFu' native library. */
-    external fun Hello(input: String ): String
+    external fun getVersion(): String
 }
