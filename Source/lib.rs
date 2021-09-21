@@ -3,8 +3,6 @@
 //! Jvm bindings to TribuFu SDK.
 
 #![allow(non_snake_case)]
-#![allow(unused_variables)]
-#![allow(unused_imports)]
 
 #[cfg(not(any(
     target_os = "windows",
@@ -25,17 +23,17 @@ use std::ffi::{CStr, CString};
 // native method.
 pub extern "system" fn Java_com_tribufu_sdk_TribuFu_getVersion(
     env: JNIEnv,
-    _: JClass,
-    j_input: JString,
+    _class: JClass,
+    input: JString,
 ) -> jstring {
     // First, we have to get the string out of Java. Check out the `strings`
     // module for more info on how this works.
-    let input = CString::from(unsafe { CStr::from_ptr(env.get_string(j_input).unwrap().as_ptr()) });
+    let input = CString::from(unsafe { CStr::from_ptr(env.get_string(input).unwrap().as_ptr()) });
 
     // Then we have to create a new Java string to return. Again, more info
     // in the `strings` module.
-    let res = env.new_string(input.to_str().unwrap()).unwrap();
+    let output = env.new_string(input.to_str().unwrap()).unwrap();
 
     // Finally, extract the raw pointer to return.
-    return res.into_inner();
+    return output.into_inner();
 }
