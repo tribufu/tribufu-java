@@ -1,5 +1,5 @@
 [package]
-name = "tribufu-jvm"
+name = "tribufu-jni"
 version = "0.0.1"
 description = "JVM bindings to TribuFu SDK"
 repository = "https://github.com/TribuFu/SDK"
@@ -9,10 +9,10 @@ edition = "2018"
 publish = false
 
 [lib]
-name="TribuFu_Jvm"
+name="TribuFu_Jni"
 crate-type = ["cdylib", "rlib"]
 path = "Source/lib.rs"
 
 [dependencies]
-#tribufu = { path = "../DevKit.Rs" }
+tribufu = { path = "../DevKit.Rs" }
 jni = "0.19.0"
