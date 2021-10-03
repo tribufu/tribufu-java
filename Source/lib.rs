@@ -4,23 +4,12 @@
 
 #![allow(non_snake_case)]
 
-#[cfg(not(any(
-    target_os = "windows",
-    target_os = "macos",
-    target_os = "linux",
-    target_os = "android",
-)))]
-compile_error!("INVALID_TARGET_PLATFORM");
-
 use jni::objects::{JClass, JString};
 use jni::sys::jstring;
 use jni::JNIEnv;
 use std::ffi::{CStr, CString};
 
 #[no_mangle]
-// This is the class that owns our static method. It's not going to be used,
-// but still must be present to match the expected signature of a static
-// native method.
 pub extern "system" fn Java_com_tribufu_sdk_TribuFu_getVersion(
     env: JNIEnv,
     _class: JClass,
