@@ -1,7 +1,7 @@
 [package]
 name = "tribufu-jni"
 version = "0.0.1"
-description = "JVM bindings to TribuFu SDK"
+description = "JNI bindings to TribuFu SDK"
 repository = "https://github.com/TribuFu/SDK"
 authors = ["TribuFu <contact@tribufu.com>"]
 license = "Apache-2.0"
