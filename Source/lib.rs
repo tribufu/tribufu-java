@@ -1,6 +1,6 @@
 // Copyright (c) TribuFu. All Rights Reserved.
 
-//! Jvm bindings to TribuFu SDK.
+//! JNI bindings to TribuFu SDK.
 
 #![allow(non_snake_case)]
 
