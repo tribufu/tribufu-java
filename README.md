@@ -1,3 +1,3 @@
 # Java SDK
 
-JVM SDK for games and apps access TribuFu services.
+Java bindings to TribuFu SDK.
