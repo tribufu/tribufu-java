@@ -1,3 +1,3 @@
-# Java SDK
+# JVM SDK
 
-Java bindings to TribuFu SDK.
+JVM bindings to TribuFu SDK.
