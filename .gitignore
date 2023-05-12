@@ -1,37 +1,8 @@
-# Binary Files
-
-Binaries/
-Intermediate/
-
-# Cargo Files
-
-Cargo.lock
-
-# Packaged Artifacts
-
-Release/
-
-# Idea and Gradle Files
-
-.idea/
+.bloop/
 .gradle/
-
-build/
-
-libs/
-jniLibs/
-
-local.properties
-
-# Java Extension Files
-
-.project
-.classpath
-
+.idea/
+.metals/
 bin/
-
-.settings/
-
-# Mac OSX
+build/
 
 .DS_Store
