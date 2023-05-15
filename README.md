@@ -1,1 +1,1 @@
-# DevKit-Jvm
+# TribuFu JVM SDK
