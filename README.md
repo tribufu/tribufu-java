@@ -1,1 +1,1 @@
-# DevKit JVM
+# Java SDK
