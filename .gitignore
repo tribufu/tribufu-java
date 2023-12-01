@@ -3,6 +3,7 @@
 .gradle/
 .idea/
 .metals/
+.vscode/
 bin/
 build/
 
