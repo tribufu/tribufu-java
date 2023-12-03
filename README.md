@@ -1,1 +1,1 @@
-# Java SDK
+# Tribufu SDK
