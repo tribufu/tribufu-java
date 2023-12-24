@@ -3,7 +3,7 @@ plugins {
 }
 
 version = "0.0.4"
-archivesBaseName = "tribufu"
+archivesBaseName = "Tribufu"
 
 repositories {
     mavenCentral()

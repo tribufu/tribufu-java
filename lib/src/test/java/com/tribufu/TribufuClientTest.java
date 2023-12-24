@@ -1,6 +1,6 @@
-// Copyright (c) TribuFu. All Rights Reserved
+// Copyright (c) Tribufu. All Rights Reserved
 
-package com.tribufu.sdk;
+package com.tribufu;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;

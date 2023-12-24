@@ -1,6 +1,6 @@
 // Copyright (c) Tribufu. All Rights Reserved.
 
-package com.tribufu.sdk;
+package com.tribufu;
 
 import java.net.http.HttpClient;
 import java.util.HashMap;
