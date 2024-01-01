@@ -3,11 +3,11 @@
 package com.tribufu.oauth2;
 
 public class OAuth2AuthorizeRequest {
-    private final OAuth2ResponseType responseType;
-    private final String clientId;
-    private final String scope;
-    private final String redirectUri;
-    private final String state;
+    public final OAuth2ResponseType responseType;
+    public final String clientId;
+    public final String scope;
+    public final String redirectUri;
+    public final String state;
 
     public OAuth2AuthorizeRequest(OAuth2ResponseType responseType, String clientId, String scope, String redirectUri,
             String state) {

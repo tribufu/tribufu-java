@@ -3,11 +3,11 @@
 package com.tribufu.oauth2;
 
 public class OAuth2TokenResponse {
-    private final OAuth2TokenType tokenType;
-    private final String accessToken;
-    private final String refreshToken;
-    private final String scope;
-    private final int expiresIn;
+    public final OAuth2TokenType tokenType;
+    public final String accessToken;
+    public final String refreshToken;
+    public final String scope;
+    public final int expiresIn;
 
     public OAuth2TokenResponse(OAuth2TokenType tokenType, String accessToken, String refreshToken, String scope,
             int expiresIn) {

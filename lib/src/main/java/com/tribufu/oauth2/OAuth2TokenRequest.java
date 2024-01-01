@@ -3,14 +3,14 @@
 package com.tribufu.oauth2;
 
 public class OAuth2TokenRequest {
-    private final OAuth2GrantType grantType;
-    private final String code;
-    private final String refreshToken;
-    private final String username;
-    private final String password;
-    private final String clientId;
-    private final String clientSecret;
-    private final String redirectUri;
+    public final OAuth2GrantType grantType;
+    public final String code;
+    public final String refreshToken;
+    public final String username;
+    public final String password;
+    public final String clientId;
+    public final String clientSecret;
+    public final String redirectUri;
 
     public OAuth2TokenRequest(OAuth2GrantType grantType, String code, String refreshToken, String username,
             String password, String clientId, String clientSecret, String redirectUri) {
