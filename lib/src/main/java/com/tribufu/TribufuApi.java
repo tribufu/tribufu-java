@@ -93,6 +93,16 @@ public class TribufuApi {
      *
      * This will fallback to the default api if the environment variables are not
      * set.
+     */
+    public static TribufuApi fromEnvOrDefault() {
+        return TribufuApi.fromEnvOrDefault(null);
+    }
+
+    /**
+     * Create a TribufuApi from environment variables or the default api.
+     *
+     * This will fallback to the default api if the environment variables are not
+     * set.
      *
      * @param prefix A prefix for the environment variables.
      */
