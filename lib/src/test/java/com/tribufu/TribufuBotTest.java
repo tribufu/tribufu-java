@@ -5,10 +5,10 @@ package com.tribufu;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-class TribufuClientTest {
+class TribufuBotTest {
     @Test
     void defaultApi() {
-        TribufuClient client = new TribufuClient("0", "...");
-        assertEquals("0", client.getClientId());
+        TribufuBot bot = new TribufuBot("0", "...");
+        assertEquals("0", bot.getBotId());
     }
 }
