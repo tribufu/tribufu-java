@@ -2,7 +2,7 @@
 
 package com.tribufu;
 
-import java.net.http.HttpClient;
+import com.tribufu.http.TribufuHttp;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,7 +23,7 @@ public class TribufuApi {
 
     protected final String baseUrl;
     protected final TribufuApiOptions options;
-    protected final HttpClient http;
+    protected final TribufuHttp http;
 
     /**
      * Create a TribufuApi with the default options.
@@ -51,9 +51,7 @@ public class TribufuApi {
     public TribufuApi(TribufuApiOptions options) {
         this.options = options;
         this.baseUrl = TribufuApi.getBaseUrl();
-        this.http = HttpClient.newBuilder()
-                .version(HttpClient.Version.HTTP_2)
-                .build();
+        this.http = new TribufuHttp(baseUrl, TribufuApi.defaultHeaders(), true, TribufuApi.API_URL);
     }
 
     /**
