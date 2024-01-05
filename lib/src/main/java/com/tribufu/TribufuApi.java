@@ -3,8 +3,15 @@
 package com.tribufu;
 
 import com.tribufu.http.TribufuHttp;
+import com.tribufu.types.games.Game;
+import com.tribufu.types.servers.Server;
+import com.tribufu.types.users.Profile;
+
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CompletableFuture;
 
 /**
  * Tribufu API
@@ -19,7 +26,7 @@ import java.util.Map;
  */
 public class TribufuApi {
     private static final String VERSION = "0.0.0";
-    private static final String API_URL = "https://api.tribufu.com";
+    private static final String API_URL = "http://localhost:5000";
 
     protected final String baseUrl;
     protected final TribufuApiOptions options;
@@ -158,6 +165,95 @@ public class TribufuApi {
         }
 
         return headers;
+    }
+
+    /**
+     * Get games from the Tribufu API.
+     *
+     * @param page
+     */
+    public List<Game> getGames() {
+        Map<String, String> headers = this.getHeaders();
+        return this.http.getArray("/v1/packages", headers, Game[].class);
+    }
+
+    /**
+     * Get a game from the Tribufu API.
+     *
+     * @param id
+     */
+    public CompletableFuture<Game> getGameById(String id) {
+        Map<String, String> headers = this.getHeaders();
+        return this.http.get("/v1/packages/" + id, headers, Game.class);
+    }
+
+    /**
+     * Get a game from the Tribufu API.
+     *
+     * @param page
+     */
+    public List<Server> getServers() {
+        Map<String, String> headers = this.getHeaders();
+        return this.http.getArray("/v1/servers", headers, Server[].class);
+    }
+
+    /**
+     * Get a server by id from the Tribufu API.
+     *
+     * @param id
+     */
+    public CompletableFuture<Server> getServerById(String id) {
+        Map<String, String> headers = this.getHeaders();
+        return this.http.get("/v1/servers/" + id, headers, Server.class);
+    }
+
+    /**
+     * Get a server by address from the Tribufu API.
+     *
+     * @param id
+     */
+    public CompletableFuture<Server> getServerByAddress(String address) {
+        Map<String, String> headers = this.getHeaders();
+        return this.http.get("/v1/servers/address/" + address, headers, Server.class);
+    }
+
+    /**
+     * Get a user by id from the Tribufu API.
+     *
+     * @param id
+     */
+    public CompletableFuture<Profile> getUsersById(String id) {
+        Map<String, String> headers = this.getHeaders();
+        return this.http.get("/v1/users/" + id, headers, Profile.class);
+    }
+
+    /**
+     * Get a user by name from the Tribufu API.
+     *
+     * @param uuid
+     */
+    public CompletableFuture<Profile> getUsersByUuid(String uuid) {
+        return this.getUserByKey("uuid", uuid);
+    }
+
+    /**
+     * Get a user by email from the Tribufu API.
+     *
+     * @param email
+     */
+    public CompletableFuture<Profile> getUsersByName(String email) {
+        return this.getUserByKey("email", email);
+    }
+
+    /**
+     * Get a user by custom key from the Tribufu API.
+     *
+     * @param key
+     * @param value
+     */
+    private CompletableFuture<Profile> getUserByKey(String key, String value) {
+        Map<String, String> headers = this.getHeaders();
+        return this.http.get("/v1/users?" + key + "=" + value, headers, Profile.class);
     }
 
     /*

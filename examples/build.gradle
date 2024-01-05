@@ -1,0 +1,20 @@
+plugins {
+    id 'application'
+}
+
+version = "0.0.4"
+archivesBaseName = "TribufuExample"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(':lib')
+    implementation 'com.google.guava:guava:30.0-jre'
+    testImplementation 'junit:junit:4.13.1'
+}
+
+application {
+    mainClass = 'com.tribufu.example.ExampleApp'
+}

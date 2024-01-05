@@ -4,12 +4,16 @@ package com.tribufu.http;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.URI;
 import java.util.concurrent.CompletableFuture;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -83,6 +87,32 @@ public class TribufuHttp {
                 .build();
 
         return sendRequest(request, returnType);
+    }
+
+    /**
+     * Make a GET request to the Tribufu API and deserialize the response JSON.
+     *
+     * @param path       The path of the resource.
+     * @param headers    Optional headers.
+     * @param returnType The type to deserialize the response into.
+     * @return A CompletableFuture containing the deserialized response object.
+     */
+    public <T> List<T> getArray(String path, Map<String, String> headers, Class<T[]> returnType) {
+        var requestBuilder = HttpRequest.newBuilder();
+
+        for (var entry : headers.entrySet()) {
+            requestBuilder.header(entry.getKey(), entry.getValue());
+        }
+
+        var request = requestBuilder
+                .uri(URI.create(this.options.baseUrl + path))
+                .GET()
+                .build();
+
+        var response = sendRequest(request);
+        T[] array = new Gson().fromJson(response.join(), returnType);
+
+        return Arrays.asList(array);
     }
 
     /**
