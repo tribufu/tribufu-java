@@ -2,16 +2,15 @@
 
 package com.tribufu;
 
-import com.tribufu.http.TribufuHttp;
 import com.tribufu.types.games.Game;
 import com.tribufu.types.servers.Server;
 import com.tribufu.types.users.Profile;
-
+import dev.mintaka.http.HttpClient;
 import java.util.ArrayList;
+import java.util.concurrent.CompletableFuture;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.CompletableFuture;
 
 /**
  * Tribufu API
@@ -30,7 +29,7 @@ public class TribufuApi {
 
     protected final String baseUrl;
     protected final TribufuApiOptions options;
-    protected final TribufuHttp http;
+    protected final HttpClient http;
 
     /**
      * Create a TribufuApi with the default options.
@@ -58,7 +57,7 @@ public class TribufuApi {
     public TribufuApi(TribufuApiOptions options) {
         this.options = options;
         this.baseUrl = TribufuApi.getBaseUrl();
-        this.http = new TribufuHttp(baseUrl, TribufuApi.defaultHeaders(), true, TribufuApi.API_URL);
+        this.http = new HttpClient(baseUrl, TribufuApi.defaultHeaders(), true, TribufuApi.API_URL);
     }
 
     /**

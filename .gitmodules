@@ -1,0 +1,3 @@
+[submodule "vendor/MintakaJvm"]
+	path = vendor/MintakaJvm
+	url = https://github.com/Tribufu/MintakaJvm
