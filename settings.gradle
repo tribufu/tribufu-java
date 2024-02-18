@@ -5,6 +5,3 @@ plugins {
 rootProject.name = 'TribufuJvm'
 include('lib')
 include('examples')
-
-include 'MintakaJvm'
-project(':MintakaJvm').projectDir = file('vendor/MintakaJvm/lib')
