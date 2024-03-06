@@ -6,7 +6,6 @@ import com.tribufu.types.games.Game;
 import com.tribufu.types.servers.Server;
 import com.tribufu.types.users.Profile;
 import com.tribufu.http.HttpClient;
-import java.util.ArrayList;
 import java.util.concurrent.CompletableFuture;
 import java.util.HashMap;
 import java.util.List;
