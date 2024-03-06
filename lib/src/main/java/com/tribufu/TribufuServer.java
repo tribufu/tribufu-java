@@ -2,6 +2,9 @@
 
 package com.tribufu;
 
+import com.tribufu.types.servers.Server;
+import java.util.concurrent.CompletableFuture;
+
 /**
  * Tribufu Server
  *
@@ -66,5 +69,12 @@ public class TribufuServer extends TribufuClient {
      */
     public String getServerId() {
         return this.serverId;
+    }
+
+    /**
+     * Get information about the current server.
+     */
+    public CompletableFuture<Server> getServerInfo() {
+        return this.getServerById(this.serverId);
     }
 }
