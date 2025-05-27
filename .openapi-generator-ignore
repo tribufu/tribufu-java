@@ -1,0 +1,17 @@
+.github/
+docs/
+gradle/
+
+.gitignore
+.travis.yml
+AndroidManifest.xml
+api/openapi.yaml
+build.gradle
+build.sbt
+git_push.sh
+gradle.properties
+gradlew
+gradlew.bat
+pom.xml
+README.md
+settings.gradle
