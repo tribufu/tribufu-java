@@ -1,6 +1,5 @@
 .bloop/
 .gradle/
-.gradle/
 .idea/
 .metals/
 .vscode/
@@ -8,3 +7,7 @@ bin/
 build/
 
 .DS_Store
+.env
+*.filters
+*.user
+desktop.ini
