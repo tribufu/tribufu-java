@@ -1,6 +1,6 @@
-# Tribufu JVM
+# Tribufu Java
 
-JVM SDK to access Tribufu APIs and services.
+Java SDK to access Tribufu APIs and services.
 
 [![Maven][mvn-badge]][mvn-url]
 [![MIT License][mit-badge]][mit-url]
