@@ -144,7 +144,7 @@ public class TribufuApi extends TribufuGeneratedApi {
     /**
      * Get the User-Agent string for the API.
      */
-    private static String getUserAgent() {
+    public static String getUserAgent() {
         String version = getVersion();
         String os = System.getProperty("os.name");
         String arch = System.getProperty("os.arch");
