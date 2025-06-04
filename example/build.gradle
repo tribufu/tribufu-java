@@ -1,0 +1,24 @@
+plugins {
+    id "application"
+}
+
+repositories {
+    mavenCentral()
+    maven { url = "https://mvn.tribufu.com/releases" }
+}
+
+dependencies {
+    implementation "com.google.guava:guava:30.0-jre"
+    implementation project(":")
+    testImplementation "junit:junit:4.13.1"
+}
+
+jar {
+    dependsOn ":jar"
+    from project(":").sourceSets.main.output
+    from configurations.compileClasspath.filter { it.name.contains("com.tribufu") }.collect { zipTree(it) }
+
+    manifest {
+        attributes("Implementation-Title": rootProject.name, "Implementation-Version": project.version, "Main-Class": "com.tribufu.example.Main")
+    }
+}
