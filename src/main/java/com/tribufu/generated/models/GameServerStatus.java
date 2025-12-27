@@ -24,22 +24,20 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Gets or Sets GrantType
+ * Gets or Sets GameServerStatus
  */
-@JsonAdapter(GrantType.Adapter.class)
-public enum GrantType {
+@JsonAdapter(GameServerStatus.Adapter.class)
+public enum GameServerStatus {
   
-  AUTHORIZATION_CODE("authorization_code"),
+  UNKNOWN("unknown"),
   
-  CLIENT_CREDENTIALS("client_credentials"),
+  OFFLINE("offline"),
   
-  PASSWORD("password"),
-  
-  REFRESH_TOKEN("refresh_token");
+  ONLINE("online");
 
   private String value;
 
-  GrantType(String value) {
+  GameServerStatus(String value) {
     this.value = value;
   }
 
@@ -52,8 +50,8 @@ public enum GrantType {
     return String.valueOf(value);
   }
 
-  public static GrantType fromValue(String value) {
-    for (GrantType b : GrantType.values()) {
+  public static GameServerStatus fromValue(String value) {
+    for (GameServerStatus b : GameServerStatus.values()) {
       if (b.value.equals(value)) {
         return b;
       }
@@ -61,22 +59,22 @@ public enum GrantType {
     throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
-  public static class Adapter extends TypeAdapter<GrantType> {
+  public static class Adapter extends TypeAdapter<GameServerStatus> {
     @Override
-    public void write(final JsonWriter jsonWriter, final GrantType enumeration) throws IOException {
+    public void write(final JsonWriter jsonWriter, final GameServerStatus enumeration) throws IOException {
       jsonWriter.value(enumeration.getValue());
     }
 
     @Override
-    public GrantType read(final JsonReader jsonReader) throws IOException {
+    public GameServerStatus read(final JsonReader jsonReader) throws IOException {
       String value = jsonReader.nextString();
-      return GrantType.fromValue(value);
+      return GameServerStatus.fromValue(value);
     }
   }
 
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
     String value = jsonElement.getAsString();
-    GrantType.fromValue(value);
+    GameServerStatus.fromValue(value);
   }
 }
 

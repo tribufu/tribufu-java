@@ -19,10 +19,11 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.tribufu.generated.models.LoginProvider;
+import com.tribufu.generated.models.ClientType;
 import java.io.IOException;
-import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -49,10 +50,10 @@ import java.util.Set;
 import com.tribufu.generated.JSON;
 
 /**
- * Account
+ * ClientInfo
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-27T09:52:38.593392400-03:00[America/Sao_Paulo]", comments = "Generator version: 7.12.0")
-public class Account {
+public class ClientInfo {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   @javax.annotation.Nullable
@@ -63,40 +64,25 @@ public class Account {
   @javax.annotation.Nullable
   private String name;
 
-  public static final String SERIALIZED_NAME_PROVIDER = "provider";
-  @SerializedName(SERIALIZED_NAME_PROVIDER)
-  @javax.annotation.Nonnull
-  private LoginProvider provider;
-
-  public static final String SERIALIZED_NAME_USER_ID = "user_id";
-  @SerializedName(SERIALIZED_NAME_USER_ID)
+  public static final String SERIALIZED_NAME_TYPE = "type";
+  @SerializedName(SERIALIZED_NAME_TYPE)
   @javax.annotation.Nullable
-  private String userId;
+  private ClientType type;
 
-  public static final String SERIALIZED_NAME_AUTHORIZED = "authorized";
-  @SerializedName(SERIALIZED_NAME_AUTHORIZED)
+  public static final String SERIALIZED_NAME_PHOTO_URL = "photo_url";
+  @SerializedName(SERIALIZED_NAME_PHOTO_URL)
   @javax.annotation.Nullable
-  private Boolean authorized;
+  private String photoUrl;
 
-  public static final String SERIALIZED_NAME_FIELDS = "fields";
-  @SerializedName(SERIALIZED_NAME_FIELDS)
+  public static final String SERIALIZED_NAME_PERMISSIONS = "permissions";
+  @SerializedName(SERIALIZED_NAME_PERMISSIONS)
   @javax.annotation.Nullable
-  private Object fields = null;
+  private List<String> permissions;
 
-  public static final String SERIALIZED_NAME_CREATED = "created";
-  @SerializedName(SERIALIZED_NAME_CREATED)
-  @javax.annotation.Nullable
-  private OffsetDateTime created;
-
-  public static final String SERIALIZED_NAME_UPDATED = "updated";
-  @SerializedName(SERIALIZED_NAME_UPDATED)
-  @javax.annotation.Nullable
-  private OffsetDateTime updated;
-
-  public Account() {
+  public ClientInfo() {
   }
 
-  public Account id(@javax.annotation.Nullable String id) {
+  public ClientInfo id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
@@ -115,7 +101,7 @@ public class Account {
   }
 
 
-  public Account name(@javax.annotation.Nullable String name) {
+  public ClientInfo name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -134,117 +120,68 @@ public class Account {
   }
 
 
-  public Account provider(@javax.annotation.Nonnull LoginProvider provider) {
-    this.provider = provider;
+  public ClientInfo type(@javax.annotation.Nullable ClientType type) {
+    this.type = type;
     return this;
   }
 
   /**
-   * Get provider
-   * @return provider
-   */
-  @javax.annotation.Nonnull
-  public LoginProvider getProvider() {
-    return provider;
-  }
-
-  public void setProvider(@javax.annotation.Nonnull LoginProvider provider) {
-    this.provider = provider;
-  }
-
-
-  public Account userId(@javax.annotation.Nullable String userId) {
-    this.userId = userId;
-    return this;
-  }
-
-  /**
-   * Get userId
-   * @return userId
+   * Get type
+   * @return type
    */
   @javax.annotation.Nullable
-  public String getUserId() {
-    return userId;
+  public ClientType getType() {
+    return type;
   }
 
-  public void setUserId(@javax.annotation.Nullable String userId) {
-    this.userId = userId;
+  public void setType(@javax.annotation.Nullable ClientType type) {
+    this.type = type;
   }
 
 
-  public Account authorized(@javax.annotation.Nullable Boolean authorized) {
-    this.authorized = authorized;
+  public ClientInfo photoUrl(@javax.annotation.Nullable String photoUrl) {
+    this.photoUrl = photoUrl;
     return this;
   }
 
   /**
-   * Get authorized
-   * @return authorized
+   * Get photoUrl
+   * @return photoUrl
    */
   @javax.annotation.Nullable
-  public Boolean getAuthorized() {
-    return authorized;
+  public String getPhotoUrl() {
+    return photoUrl;
   }
 
-  public void setAuthorized(@javax.annotation.Nullable Boolean authorized) {
-    this.authorized = authorized;
+  public void setPhotoUrl(@javax.annotation.Nullable String photoUrl) {
+    this.photoUrl = photoUrl;
   }
 
 
-  public Account fields(@javax.annotation.Nullable Object fields) {
-    this.fields = fields;
+  public ClientInfo permissions(@javax.annotation.Nullable List<String> permissions) {
+    this.permissions = permissions;
+    return this;
+  }
+
+  public ClientInfo addPermissionsItem(String permissionsItem) {
+    if (this.permissions == null) {
+      this.permissions = new ArrayList<>();
+    }
+    this.permissions.add(permissionsItem);
     return this;
   }
 
   /**
-   * Get fields
-   * @return fields
+   * Get permissions
+   * @return permissions
    */
   @javax.annotation.Nullable
-  public Object getFields() {
-    return fields;
+  public List<String> getPermissions() {
+    return permissions;
   }
 
-  public void setFields(@javax.annotation.Nullable Object fields) {
-    this.fields = fields;
-  }
-
-
-  public Account created(@javax.annotation.Nullable OffsetDateTime created) {
-    this.created = created;
-    return this;
-  }
-
-  /**
-   * Get created
-   * @return created
-   */
-  @javax.annotation.Nullable
-  public OffsetDateTime getCreated() {
-    return created;
-  }
-
-  public void setCreated(@javax.annotation.Nullable OffsetDateTime created) {
-    this.created = created;
-  }
-
-
-  public Account updated(@javax.annotation.Nullable OffsetDateTime updated) {
-    this.updated = updated;
-    return this;
-  }
-
-  /**
-   * Get updated
-   * @return updated
-   */
-  @javax.annotation.Nullable
-  public OffsetDateTime getUpdated() {
-    return updated;
-  }
-
-  public void setUpdated(@javax.annotation.Nullable OffsetDateTime updated) {
-    this.updated = updated;
+  public void setPermissions(@javax.annotation.Nullable List<String> permissions) {
+    this.permissions = permissions;
   }
 
 
@@ -257,15 +194,12 @@ public class Account {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Account account = (Account) o;
-    return Objects.equals(this.id, account.id) &&
-        Objects.equals(this.name, account.name) &&
-        Objects.equals(this.provider, account.provider) &&
-        Objects.equals(this.userId, account.userId) &&
-        Objects.equals(this.authorized, account.authorized) &&
-        Objects.equals(this.fields, account.fields) &&
-        Objects.equals(this.created, account.created) &&
-        Objects.equals(this.updated, account.updated);
+    ClientInfo clientInfo = (ClientInfo) o;
+    return Objects.equals(this.id, clientInfo.id) &&
+        Objects.equals(this.name, clientInfo.name) &&
+        Objects.equals(this.type, clientInfo.type) &&
+        Objects.equals(this.photoUrl, clientInfo.photoUrl) &&
+        Objects.equals(this.permissions, clientInfo.permissions);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -274,7 +208,7 @@ public class Account {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, provider, userId, authorized, fields, created, updated);
+    return Objects.hash(id, name, type, photoUrl, permissions);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -287,15 +221,12 @@ public class Account {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Account {\n");
+    sb.append("class ClientInfo {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
-    sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
-    sb.append("    authorized: ").append(toIndentedString(authorized)).append("\n");
-    sb.append("    fields: ").append(toIndentedString(fields)).append("\n");
-    sb.append("    created: ").append(toIndentedString(created)).append("\n");
-    sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    photoUrl: ").append(toIndentedString(photoUrl)).append("\n");
+    sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -320,42 +251,38 @@ public class Account {
     openapiFields = new HashSet<String>();
     openapiFields.add("id");
     openapiFields.add("name");
-    openapiFields.add("provider");
-    openapiFields.add("user_id");
-    openapiFields.add("authorized");
-    openapiFields.add("fields");
-    openapiFields.add("created");
-    openapiFields.add("updated");
+    openapiFields.add("type");
+    openapiFields.add("photo_url");
+    openapiFields.add("permissions");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("id");
-    openapiRequiredFields.add("provider");
+    openapiRequiredFields.add("name");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to Account
+   * @throws IOException if the JSON Element is invalid with respect to ClientInfo
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!Account.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Account is not found in the empty JSON string", Account.openapiRequiredFields.toString()));
+        if (!ClientInfo.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ClientInfo is not found in the empty JSON string", ClientInfo.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!Account.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Account` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!ClientInfo.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ClientInfo` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : Account.openapiRequiredFields) {
+      for (String requiredField : ClientInfo.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
@@ -367,10 +294,16 @@ public class Account {
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
-      // validate the required field `provider`
-      LoginProvider.validateJsonElement(jsonObj.get("provider"));
-      if ((jsonObj.get("user_id") != null && !jsonObj.get("user_id").isJsonNull()) && !jsonObj.get("user_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `user_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("user_id").toString()));
+      // validate the optional field `type`
+      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
+        ClientType.validateJsonElement(jsonObj.get("type"));
+      }
+      if ((jsonObj.get("photo_url") != null && !jsonObj.get("photo_url").isJsonNull()) && !jsonObj.get("photo_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `photo_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("photo_url").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("permissions") != null && !jsonObj.get("permissions").isJsonNull() && !jsonObj.get("permissions").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `permissions` to be an array in the JSON string but got `%s`", jsonObj.get("permissions").toString()));
       }
   }
 
@@ -378,22 +311,22 @@ public class Account {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!Account.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'Account' and its subtypes
+       if (!ClientInfo.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ClientInfo' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<Account> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(Account.class));
+       final TypeAdapter<ClientInfo> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ClientInfo.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<Account>() {
+       return (TypeAdapter<T>) new TypeAdapter<ClientInfo>() {
            @Override
-           public void write(JsonWriter out, Account value) throws IOException {
+           public void write(JsonWriter out, ClientInfo value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public Account read(JsonReader in) throws IOException {
+           public ClientInfo read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -404,18 +337,18 @@ public class Account {
   }
 
   /**
-   * Create an instance of Account given an JSON string
+   * Create an instance of ClientInfo given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of Account
-   * @throws IOException if the JSON string is invalid with respect to Account
+   * @return An instance of ClientInfo
+   * @throws IOException if the JSON string is invalid with respect to ClientInfo
    */
-  public static Account fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, Account.class);
+  public static ClientInfo fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ClientInfo.class);
   }
 
   /**
-   * Convert an instance of Account to an JSON string
+   * Convert an instance of ClientInfo to an JSON string
    *
    * @return JSON string
    */

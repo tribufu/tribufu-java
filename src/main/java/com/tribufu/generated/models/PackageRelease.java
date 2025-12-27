@@ -19,10 +19,12 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.tribufu.generated.models.LoginProvider;
+import com.tribufu.generated.models.StorageFile;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -49,39 +51,34 @@ import java.util.Set;
 import com.tribufu.generated.JSON;
 
 /**
- * Account
+ * PackageRelease
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-27T09:52:38.593392400-03:00[America/Sao_Paulo]", comments = "Generator version: 7.12.0")
-public class Account {
+public class PackageRelease {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   @javax.annotation.Nullable
   private String id;
 
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
+  public static final String SERIALIZED_NAME_VERSION = "version";
+  @SerializedName(SERIALIZED_NAME_VERSION)
   @javax.annotation.Nullable
-  private String name;
+  private String version;
 
-  public static final String SERIALIZED_NAME_PROVIDER = "provider";
-  @SerializedName(SERIALIZED_NAME_PROVIDER)
-  @javax.annotation.Nonnull
-  private LoginProvider provider;
-
-  public static final String SERIALIZED_NAME_USER_ID = "user_id";
-  @SerializedName(SERIALIZED_NAME_USER_ID)
+  public static final String SERIALIZED_NAME_PACKAGE_ID = "package_id";
+  @SerializedName(SERIALIZED_NAME_PACKAGE_ID)
   @javax.annotation.Nullable
-  private String userId;
+  private String packageId;
 
-  public static final String SERIALIZED_NAME_AUTHORIZED = "authorized";
-  @SerializedName(SERIALIZED_NAME_AUTHORIZED)
+  public static final String SERIALIZED_NAME_NOTES = "notes";
+  @SerializedName(SERIALIZED_NAME_NOTES)
   @javax.annotation.Nullable
-  private Boolean authorized;
+  private String notes;
 
-  public static final String SERIALIZED_NAME_FIELDS = "fields";
-  @SerializedName(SERIALIZED_NAME_FIELDS)
+  public static final String SERIALIZED_NAME_FILES = "files";
+  @SerializedName(SERIALIZED_NAME_FILES)
   @javax.annotation.Nullable
-  private Object fields = null;
+  private List<StorageFile> files;
 
   public static final String SERIALIZED_NAME_CREATED = "created";
   @SerializedName(SERIALIZED_NAME_CREATED)
@@ -93,10 +90,17 @@ public class Account {
   @javax.annotation.Nullable
   private OffsetDateTime updated;
 
-  public Account() {
+  public PackageRelease() {
   }
 
-  public Account id(@javax.annotation.Nullable String id) {
+  public PackageRelease(
+     List<StorageFile> files
+  ) {
+    this();
+    this.files = files;
+  }
+
+  public PackageRelease id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
@@ -115,102 +119,75 @@ public class Account {
   }
 
 
-  public Account name(@javax.annotation.Nullable String name) {
-    this.name = name;
+  public PackageRelease version(@javax.annotation.Nullable String version) {
+    this.version = version;
     return this;
   }
 
   /**
-   * Get name
-   * @return name
+   * Get version
+   * @return version
    */
   @javax.annotation.Nullable
-  public String getName() {
-    return name;
+  public String getVersion() {
+    return version;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
-    this.name = name;
+  public void setVersion(@javax.annotation.Nullable String version) {
+    this.version = version;
   }
 
 
-  public Account provider(@javax.annotation.Nonnull LoginProvider provider) {
-    this.provider = provider;
+  public PackageRelease packageId(@javax.annotation.Nullable String packageId) {
+    this.packageId = packageId;
     return this;
   }
 
   /**
-   * Get provider
-   * @return provider
-   */
-  @javax.annotation.Nonnull
-  public LoginProvider getProvider() {
-    return provider;
-  }
-
-  public void setProvider(@javax.annotation.Nonnull LoginProvider provider) {
-    this.provider = provider;
-  }
-
-
-  public Account userId(@javax.annotation.Nullable String userId) {
-    this.userId = userId;
-    return this;
-  }
-
-  /**
-   * Get userId
-   * @return userId
+   * Get packageId
+   * @return packageId
    */
   @javax.annotation.Nullable
-  public String getUserId() {
-    return userId;
+  public String getPackageId() {
+    return packageId;
   }
 
-  public void setUserId(@javax.annotation.Nullable String userId) {
-    this.userId = userId;
+  public void setPackageId(@javax.annotation.Nullable String packageId) {
+    this.packageId = packageId;
   }
 
 
-  public Account authorized(@javax.annotation.Nullable Boolean authorized) {
-    this.authorized = authorized;
+  public PackageRelease notes(@javax.annotation.Nullable String notes) {
+    this.notes = notes;
     return this;
   }
 
   /**
-   * Get authorized
-   * @return authorized
+   * Get notes
+   * @return notes
    */
   @javax.annotation.Nullable
-  public Boolean getAuthorized() {
-    return authorized;
+  public String getNotes() {
+    return notes;
   }
 
-  public void setAuthorized(@javax.annotation.Nullable Boolean authorized) {
-    this.authorized = authorized;
+  public void setNotes(@javax.annotation.Nullable String notes) {
+    this.notes = notes;
   }
 
-
-  public Account fields(@javax.annotation.Nullable Object fields) {
-    this.fields = fields;
-    return this;
-  }
 
   /**
-   * Get fields
-   * @return fields
+   * Get files
+   * @return files
    */
   @javax.annotation.Nullable
-  public Object getFields() {
-    return fields;
-  }
-
-  public void setFields(@javax.annotation.Nullable Object fields) {
-    this.fields = fields;
+  public List<StorageFile> getFiles() {
+    return files;
   }
 
 
-  public Account created(@javax.annotation.Nullable OffsetDateTime created) {
+
+  public PackageRelease created(@javax.annotation.Nullable OffsetDateTime created) {
     this.created = created;
     return this;
   }
@@ -229,7 +206,7 @@ public class Account {
   }
 
 
-  public Account updated(@javax.annotation.Nullable OffsetDateTime updated) {
+  public PackageRelease updated(@javax.annotation.Nullable OffsetDateTime updated) {
     this.updated = updated;
     return this;
   }
@@ -257,15 +234,14 @@ public class Account {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Account account = (Account) o;
-    return Objects.equals(this.id, account.id) &&
-        Objects.equals(this.name, account.name) &&
-        Objects.equals(this.provider, account.provider) &&
-        Objects.equals(this.userId, account.userId) &&
-        Objects.equals(this.authorized, account.authorized) &&
-        Objects.equals(this.fields, account.fields) &&
-        Objects.equals(this.created, account.created) &&
-        Objects.equals(this.updated, account.updated);
+    PackageRelease packageRelease = (PackageRelease) o;
+    return Objects.equals(this.id, packageRelease.id) &&
+        Objects.equals(this.version, packageRelease.version) &&
+        Objects.equals(this.packageId, packageRelease.packageId) &&
+        Objects.equals(this.notes, packageRelease.notes) &&
+        Objects.equals(this.files, packageRelease.files) &&
+        Objects.equals(this.created, packageRelease.created) &&
+        Objects.equals(this.updated, packageRelease.updated);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -274,7 +250,7 @@ public class Account {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, provider, userId, authorized, fields, created, updated);
+    return Objects.hash(id, version, packageId, notes, files, created, updated);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -287,13 +263,12 @@ public class Account {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Account {\n");
+    sb.append("class PackageRelease {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
-    sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
-    sb.append("    authorized: ").append(toIndentedString(authorized)).append("\n");
-    sb.append("    fields: ").append(toIndentedString(fields)).append("\n");
+    sb.append("    version: ").append(toIndentedString(version)).append("\n");
+    sb.append("    packageId: ").append(toIndentedString(packageId)).append("\n");
+    sb.append("    notes: ").append(toIndentedString(notes)).append("\n");
+    sb.append("    files: ").append(toIndentedString(files)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
     sb.append("}");
@@ -319,43 +294,41 @@ public class Account {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("id");
-    openapiFields.add("name");
-    openapiFields.add("provider");
-    openapiFields.add("user_id");
-    openapiFields.add("authorized");
-    openapiFields.add("fields");
+    openapiFields.add("version");
+    openapiFields.add("package_id");
+    openapiFields.add("notes");
+    openapiFields.add("files");
     openapiFields.add("created");
     openapiFields.add("updated");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("id");
-    openapiRequiredFields.add("provider");
+    openapiRequiredFields.add("version");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to Account
+   * @throws IOException if the JSON Element is invalid with respect to PackageRelease
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!Account.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Account is not found in the empty JSON string", Account.openapiRequiredFields.toString()));
+        if (!PackageRelease.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in PackageRelease is not found in the empty JSON string", PackageRelease.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!Account.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Account` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!PackageRelease.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `PackageRelease` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : Account.openapiRequiredFields) {
+      for (String requiredField : PackageRelease.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
@@ -364,13 +337,28 @@ public class Account {
       if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      if ((jsonObj.get("version") != null && !jsonObj.get("version").isJsonNull()) && !jsonObj.get("version").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `version` to be a primitive type in the JSON string but got `%s`", jsonObj.get("version").toString()));
       }
-      // validate the required field `provider`
-      LoginProvider.validateJsonElement(jsonObj.get("provider"));
-      if ((jsonObj.get("user_id") != null && !jsonObj.get("user_id").isJsonNull()) && !jsonObj.get("user_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `user_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("user_id").toString()));
+      if ((jsonObj.get("package_id") != null && !jsonObj.get("package_id").isJsonNull()) && !jsonObj.get("package_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `package_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("package_id").toString()));
+      }
+      if ((jsonObj.get("notes") != null && !jsonObj.get("notes").isJsonNull()) && !jsonObj.get("notes").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `notes` to be a primitive type in the JSON string but got `%s`", jsonObj.get("notes").toString()));
+      }
+      if (jsonObj.get("files") != null && !jsonObj.get("files").isJsonNull()) {
+        JsonArray jsonArrayfiles = jsonObj.getAsJsonArray("files");
+        if (jsonArrayfiles != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("files").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `files` to be an array in the JSON string but got `%s`", jsonObj.get("files").toString()));
+          }
+
+          // validate the optional field `files` (array)
+          for (int i = 0; i < jsonArrayfiles.size(); i++) {
+            StorageFile.validateJsonElement(jsonArrayfiles.get(i));
+          };
+        }
       }
   }
 
@@ -378,22 +366,22 @@ public class Account {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!Account.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'Account' and its subtypes
+       if (!PackageRelease.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'PackageRelease' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<Account> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(Account.class));
+       final TypeAdapter<PackageRelease> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(PackageRelease.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<Account>() {
+       return (TypeAdapter<T>) new TypeAdapter<PackageRelease>() {
            @Override
-           public void write(JsonWriter out, Account value) throws IOException {
+           public void write(JsonWriter out, PackageRelease value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public Account read(JsonReader in) throws IOException {
+           public PackageRelease read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -404,18 +392,18 @@ public class Account {
   }
 
   /**
-   * Create an instance of Account given an JSON string
+   * Create an instance of PackageRelease given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of Account
-   * @throws IOException if the JSON string is invalid with respect to Account
+   * @return An instance of PackageRelease
+   * @throws IOException if the JSON string is invalid with respect to PackageRelease
    */
-  public static Account fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, Account.class);
+  public static PackageRelease fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, PackageRelease.class);
   }
 
   /**
-   * Convert an instance of Account to an JSON string
+   * Convert an instance of PackageRelease to an JSON string
    *
    * @return JSON string
    */

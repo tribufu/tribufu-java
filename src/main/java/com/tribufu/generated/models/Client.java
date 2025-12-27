@@ -19,11 +19,13 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.tribufu.generated.models.ApplicationType;
+import com.tribufu.generated.models.ClientType;
 import java.io.IOException;
 import java.net.URI;
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -50,10 +52,10 @@ import java.util.Set;
 import com.tribufu.generated.JSON;
 
 /**
- * Application
+ * Client
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-27T09:52:38.593392400-03:00[America/Sao_Paulo]", comments = "Generator version: 7.12.0")
-public class Application {
+public class Client {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   @javax.annotation.Nullable
@@ -64,45 +66,50 @@ public class Application {
   @javax.annotation.Nullable
   private String name;
 
-  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
-  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
-  private String description;
-
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
   @javax.annotation.Nullable
-  private ApplicationType type;
+  private ClientType type;
 
   public static final String SERIALIZED_NAME_ORGANIZATION_ID = "organization_id";
   @SerializedName(SERIALIZED_NAME_ORGANIZATION_ID)
   @javax.annotation.Nullable
   private String organizationId;
 
-  public static final String SERIALIZED_NAME_ICON_URL = "icon_url";
-  @SerializedName(SERIALIZED_NAME_ICON_URL)
+  public static final String SERIALIZED_NAME_TRUSTED = "trusted";
+  @SerializedName(SERIALIZED_NAME_TRUSTED)
   @javax.annotation.Nullable
-  private URI iconUrl;
+  private Boolean trusted;
 
-  public static final String SERIALIZED_NAME_BANNER_URL = "banner_url";
-  @SerializedName(SERIALIZED_NAME_BANNER_URL)
+  public static final String SERIALIZED_NAME_WEBSITE_URL = "website_url";
+  @SerializedName(SERIALIZED_NAME_WEBSITE_URL)
   @javax.annotation.Nullable
-  private URI bannerUrl;
+  private String websiteUrl;
 
-  public static final String SERIALIZED_NAME_CAPSULE_IMAGE_URL = "capsule_image_url";
-  @SerializedName(SERIALIZED_NAME_CAPSULE_IMAGE_URL)
+  public static final String SERIALIZED_NAME_PHOTO_URL = "photo_url";
+  @SerializedName(SERIALIZED_NAME_PHOTO_URL)
   @javax.annotation.Nullable
-  private URI capsuleImageUrl;
+  private URI photoUrl;
 
-  public static final String SERIALIZED_NAME_LIBRARY_IMAGE_URL = "library_image_url";
-  @SerializedName(SERIALIZED_NAME_LIBRARY_IMAGE_URL)
+  public static final String SERIALIZED_NAME_BACKGROUND_URL = "background_url";
+  @SerializedName(SERIALIZED_NAME_BACKGROUND_URL)
   @javax.annotation.Nullable
-  private URI libraryImageUrl;
+  private URI backgroundUrl;
 
-  public static final String SERIALIZED_NAME_SLUG = "slug";
-  @SerializedName(SERIALIZED_NAME_SLUG)
+  public static final String SERIALIZED_NAME_REDIRECTS = "redirects";
+  @SerializedName(SERIALIZED_NAME_REDIRECTS)
   @javax.annotation.Nullable
-  private String slug;
+  private String redirects;
+
+  public static final String SERIALIZED_NAME_SCOPES = "scopes";
+  @SerializedName(SERIALIZED_NAME_SCOPES)
+  @javax.annotation.Nullable
+  private String scopes;
+
+  public static final String SERIALIZED_NAME_PERMISSIONS = "permissions";
+  @SerializedName(SERIALIZED_NAME_PERMISSIONS)
+  @javax.annotation.Nullable
+  private List<String> permissions;
 
   public static final String SERIALIZED_NAME_CREATED = "created";
   @SerializedName(SERIALIZED_NAME_CREATED)
@@ -114,10 +121,17 @@ public class Application {
   @javax.annotation.Nullable
   private OffsetDateTime updated;
 
-  public Application() {
+  public Client() {
   }
 
-  public Application id(@javax.annotation.Nullable String id) {
+  public Client(
+     List<String> permissions
+  ) {
+    this();
+    this.permissions = permissions;
+  }
+
+  public Client id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
@@ -136,7 +150,7 @@ public class Application {
   }
 
 
-  public Application name(@javax.annotation.Nullable String name) {
+  public Client name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -155,26 +169,7 @@ public class Application {
   }
 
 
-  public Application description(@javax.annotation.Nullable String description) {
-    this.description = description;
-    return this;
-  }
-
-  /**
-   * Get description
-   * @return description
-   */
-  @javax.annotation.Nullable
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(@javax.annotation.Nullable String description) {
-    this.description = description;
-  }
-
-
-  public Application type(@javax.annotation.Nullable ApplicationType type) {
+  public Client type(@javax.annotation.Nullable ClientType type) {
     this.type = type;
     return this;
   }
@@ -184,16 +179,16 @@ public class Application {
    * @return type
    */
   @javax.annotation.Nullable
-  public ApplicationType getType() {
+  public ClientType getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nullable ApplicationType type) {
+  public void setType(@javax.annotation.Nullable ClientType type) {
     this.type = type;
   }
 
 
-  public Application organizationId(@javax.annotation.Nullable String organizationId) {
+  public Client organizationId(@javax.annotation.Nullable String organizationId) {
     this.organizationId = organizationId;
     return this;
   }
@@ -212,102 +207,132 @@ public class Application {
   }
 
 
-  public Application iconUrl(@javax.annotation.Nullable URI iconUrl) {
-    this.iconUrl = iconUrl;
+  public Client trusted(@javax.annotation.Nullable Boolean trusted) {
+    this.trusted = trusted;
     return this;
   }
 
   /**
-   * Get iconUrl
-   * @return iconUrl
+   * Get trusted
+   * @return trusted
    */
   @javax.annotation.Nullable
-  public URI getIconUrl() {
-    return iconUrl;
+  public Boolean getTrusted() {
+    return trusted;
   }
 
-  public void setIconUrl(@javax.annotation.Nullable URI iconUrl) {
-    this.iconUrl = iconUrl;
+  public void setTrusted(@javax.annotation.Nullable Boolean trusted) {
+    this.trusted = trusted;
   }
 
 
-  public Application bannerUrl(@javax.annotation.Nullable URI bannerUrl) {
-    this.bannerUrl = bannerUrl;
+  public Client websiteUrl(@javax.annotation.Nullable String websiteUrl) {
+    this.websiteUrl = websiteUrl;
     return this;
   }
 
   /**
-   * Get bannerUrl
-   * @return bannerUrl
+   * Get websiteUrl
+   * @return websiteUrl
    */
   @javax.annotation.Nullable
-  public URI getBannerUrl() {
-    return bannerUrl;
+  public String getWebsiteUrl() {
+    return websiteUrl;
   }
 
-  public void setBannerUrl(@javax.annotation.Nullable URI bannerUrl) {
-    this.bannerUrl = bannerUrl;
+  public void setWebsiteUrl(@javax.annotation.Nullable String websiteUrl) {
+    this.websiteUrl = websiteUrl;
   }
 
 
-  public Application capsuleImageUrl(@javax.annotation.Nullable URI capsuleImageUrl) {
-    this.capsuleImageUrl = capsuleImageUrl;
+  public Client photoUrl(@javax.annotation.Nullable URI photoUrl) {
+    this.photoUrl = photoUrl;
     return this;
   }
 
   /**
-   * Get capsuleImageUrl
-   * @return capsuleImageUrl
+   * Get photoUrl
+   * @return photoUrl
    */
   @javax.annotation.Nullable
-  public URI getCapsuleImageUrl() {
-    return capsuleImageUrl;
+  public URI getPhotoUrl() {
+    return photoUrl;
   }
 
-  public void setCapsuleImageUrl(@javax.annotation.Nullable URI capsuleImageUrl) {
-    this.capsuleImageUrl = capsuleImageUrl;
+  public void setPhotoUrl(@javax.annotation.Nullable URI photoUrl) {
+    this.photoUrl = photoUrl;
   }
 
 
-  public Application libraryImageUrl(@javax.annotation.Nullable URI libraryImageUrl) {
-    this.libraryImageUrl = libraryImageUrl;
+  public Client backgroundUrl(@javax.annotation.Nullable URI backgroundUrl) {
+    this.backgroundUrl = backgroundUrl;
     return this;
   }
 
   /**
-   * Get libraryImageUrl
-   * @return libraryImageUrl
+   * Get backgroundUrl
+   * @return backgroundUrl
    */
   @javax.annotation.Nullable
-  public URI getLibraryImageUrl() {
-    return libraryImageUrl;
+  public URI getBackgroundUrl() {
+    return backgroundUrl;
   }
 
-  public void setLibraryImageUrl(@javax.annotation.Nullable URI libraryImageUrl) {
-    this.libraryImageUrl = libraryImageUrl;
+  public void setBackgroundUrl(@javax.annotation.Nullable URI backgroundUrl) {
+    this.backgroundUrl = backgroundUrl;
   }
 
 
-  public Application slug(@javax.annotation.Nullable String slug) {
-    this.slug = slug;
+  public Client redirects(@javax.annotation.Nullable String redirects) {
+    this.redirects = redirects;
     return this;
   }
 
   /**
-   * Get slug
-   * @return slug
+   * Get redirects
+   * @return redirects
    */
   @javax.annotation.Nullable
-  public String getSlug() {
-    return slug;
+  public String getRedirects() {
+    return redirects;
   }
 
-  public void setSlug(@javax.annotation.Nullable String slug) {
-    this.slug = slug;
+  public void setRedirects(@javax.annotation.Nullable String redirects) {
+    this.redirects = redirects;
   }
 
 
-  public Application created(@javax.annotation.Nullable OffsetDateTime created) {
+  public Client scopes(@javax.annotation.Nullable String scopes) {
+    this.scopes = scopes;
+    return this;
+  }
+
+  /**
+   * Get scopes
+   * @return scopes
+   */
+  @javax.annotation.Nullable
+  public String getScopes() {
+    return scopes;
+  }
+
+  public void setScopes(@javax.annotation.Nullable String scopes) {
+    this.scopes = scopes;
+  }
+
+
+  /**
+   * Get permissions
+   * @return permissions
+   */
+  @javax.annotation.Nullable
+  public List<String> getPermissions() {
+    return permissions;
+  }
+
+
+
+  public Client created(@javax.annotation.Nullable OffsetDateTime created) {
     this.created = created;
     return this;
   }
@@ -326,7 +351,7 @@ public class Application {
   }
 
 
-  public Application updated(@javax.annotation.Nullable OffsetDateTime updated) {
+  public Client updated(@javax.annotation.Nullable OffsetDateTime updated) {
     this.updated = updated;
     return this;
   }
@@ -354,19 +379,20 @@ public class Application {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Application application = (Application) o;
-    return Objects.equals(this.id, application.id) &&
-        Objects.equals(this.name, application.name) &&
-        Objects.equals(this.description, application.description) &&
-        Objects.equals(this.type, application.type) &&
-        Objects.equals(this.organizationId, application.organizationId) &&
-        Objects.equals(this.iconUrl, application.iconUrl) &&
-        Objects.equals(this.bannerUrl, application.bannerUrl) &&
-        Objects.equals(this.capsuleImageUrl, application.capsuleImageUrl) &&
-        Objects.equals(this.libraryImageUrl, application.libraryImageUrl) &&
-        Objects.equals(this.slug, application.slug) &&
-        Objects.equals(this.created, application.created) &&
-        Objects.equals(this.updated, application.updated);
+    Client client = (Client) o;
+    return Objects.equals(this.id, client.id) &&
+        Objects.equals(this.name, client.name) &&
+        Objects.equals(this.type, client.type) &&
+        Objects.equals(this.organizationId, client.organizationId) &&
+        Objects.equals(this.trusted, client.trusted) &&
+        Objects.equals(this.websiteUrl, client.websiteUrl) &&
+        Objects.equals(this.photoUrl, client.photoUrl) &&
+        Objects.equals(this.backgroundUrl, client.backgroundUrl) &&
+        Objects.equals(this.redirects, client.redirects) &&
+        Objects.equals(this.scopes, client.scopes) &&
+        Objects.equals(this.permissions, client.permissions) &&
+        Objects.equals(this.created, client.created) &&
+        Objects.equals(this.updated, client.updated);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -375,7 +401,7 @@ public class Application {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, type, organizationId, iconUrl, bannerUrl, capsuleImageUrl, libraryImageUrl, slug, created, updated);
+    return Objects.hash(id, name, type, organizationId, trusted, websiteUrl, photoUrl, backgroundUrl, redirects, scopes, permissions, created, updated);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -388,17 +414,18 @@ public class Application {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Application {\n");
+    sb.append("class Client {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
-    sb.append("    iconUrl: ").append(toIndentedString(iconUrl)).append("\n");
-    sb.append("    bannerUrl: ").append(toIndentedString(bannerUrl)).append("\n");
-    sb.append("    capsuleImageUrl: ").append(toIndentedString(capsuleImageUrl)).append("\n");
-    sb.append("    libraryImageUrl: ").append(toIndentedString(libraryImageUrl)).append("\n");
-    sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
+    sb.append("    trusted: ").append(toIndentedString(trusted)).append("\n");
+    sb.append("    websiteUrl: ").append(toIndentedString(websiteUrl)).append("\n");
+    sb.append("    photoUrl: ").append(toIndentedString(photoUrl)).append("\n");
+    sb.append("    backgroundUrl: ").append(toIndentedString(backgroundUrl)).append("\n");
+    sb.append("    redirects: ").append(toIndentedString(redirects)).append("\n");
+    sb.append("    scopes: ").append(toIndentedString(scopes)).append("\n");
+    sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
     sb.append("}");
@@ -425,14 +452,15 @@ public class Application {
     openapiFields = new HashSet<String>();
     openapiFields.add("id");
     openapiFields.add("name");
-    openapiFields.add("description");
     openapiFields.add("type");
     openapiFields.add("organization_id");
-    openapiFields.add("icon_url");
-    openapiFields.add("banner_url");
-    openapiFields.add("capsule_image_url");
-    openapiFields.add("library_image_url");
-    openapiFields.add("slug");
+    openapiFields.add("trusted");
+    openapiFields.add("website_url");
+    openapiFields.add("photo_url");
+    openapiFields.add("background_url");
+    openapiFields.add("redirects");
+    openapiFields.add("scopes");
+    openapiFields.add("permissions");
     openapiFields.add("created");
     openapiFields.add("updated");
 
@@ -445,25 +473,25 @@ public class Application {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to Application
+   * @throws IOException if the JSON Element is invalid with respect to Client
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!Application.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Application is not found in the empty JSON string", Application.openapiRequiredFields.toString()));
+        if (!Client.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in Client is not found in the empty JSON string", Client.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!Application.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Application` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!Client.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Client` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : Application.openapiRequiredFields) {
+      for (String requiredField : Client.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
@@ -475,30 +503,31 @@ public class Application {
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
-      if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
-      }
       // validate the optional field `type`
       if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
-        ApplicationType.validateJsonElement(jsonObj.get("type"));
+        ClientType.validateJsonElement(jsonObj.get("type"));
       }
       if ((jsonObj.get("organization_id") != null && !jsonObj.get("organization_id").isJsonNull()) && !jsonObj.get("organization_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `organization_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("organization_id").toString()));
       }
-      if ((jsonObj.get("icon_url") != null && !jsonObj.get("icon_url").isJsonNull()) && !jsonObj.get("icon_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `icon_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("icon_url").toString()));
+      if ((jsonObj.get("website_url") != null && !jsonObj.get("website_url").isJsonNull()) && !jsonObj.get("website_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `website_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("website_url").toString()));
       }
-      if ((jsonObj.get("banner_url") != null && !jsonObj.get("banner_url").isJsonNull()) && !jsonObj.get("banner_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `banner_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("banner_url").toString()));
+      if ((jsonObj.get("photo_url") != null && !jsonObj.get("photo_url").isJsonNull()) && !jsonObj.get("photo_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `photo_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("photo_url").toString()));
       }
-      if ((jsonObj.get("capsule_image_url") != null && !jsonObj.get("capsule_image_url").isJsonNull()) && !jsonObj.get("capsule_image_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `capsule_image_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("capsule_image_url").toString()));
+      if ((jsonObj.get("background_url") != null && !jsonObj.get("background_url").isJsonNull()) && !jsonObj.get("background_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `background_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("background_url").toString()));
       }
-      if ((jsonObj.get("library_image_url") != null && !jsonObj.get("library_image_url").isJsonNull()) && !jsonObj.get("library_image_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `library_image_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("library_image_url").toString()));
+      if ((jsonObj.get("redirects") != null && !jsonObj.get("redirects").isJsonNull()) && !jsonObj.get("redirects").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `redirects` to be a primitive type in the JSON string but got `%s`", jsonObj.get("redirects").toString()));
       }
-      if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
+      if ((jsonObj.get("scopes") != null && !jsonObj.get("scopes").isJsonNull()) && !jsonObj.get("scopes").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `scopes` to be a primitive type in the JSON string but got `%s`", jsonObj.get("scopes").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("permissions") != null && !jsonObj.get("permissions").isJsonNull() && !jsonObj.get("permissions").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `permissions` to be an array in the JSON string but got `%s`", jsonObj.get("permissions").toString()));
       }
   }
 
@@ -506,22 +535,22 @@ public class Application {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!Application.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'Application' and its subtypes
+       if (!Client.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'Client' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<Application> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(Application.class));
+       final TypeAdapter<Client> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(Client.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<Application>() {
+       return (TypeAdapter<T>) new TypeAdapter<Client>() {
            @Override
-           public void write(JsonWriter out, Application value) throws IOException {
+           public void write(JsonWriter out, Client value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public Application read(JsonReader in) throws IOException {
+           public Client read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -532,18 +561,18 @@ public class Application {
   }
 
   /**
-   * Create an instance of Application given an JSON string
+   * Create an instance of Client given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of Application
-   * @throws IOException if the JSON string is invalid with respect to Application
+   * @return An instance of Client
+   * @throws IOException if the JSON string is invalid with respect to Client
    */
-  public static Application fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, Application.class);
+  public static Client fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, Client.class);
   }
 
   /**
-   * Convert an instance of Application to an JSON string
+   * Convert an instance of Client to an JSON string
    *
    * @return JSON string
    */

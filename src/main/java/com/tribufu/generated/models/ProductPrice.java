@@ -47,58 +47,82 @@ import java.util.Set;
 import com.tribufu.generated.JSON;
 
 /**
- * UpdateProfile
+ * ProductPrice
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-27T09:52:38.593392400-03:00[America/Sao_Paulo]", comments = "Generator version: 7.12.0")
-public class UpdateProfile {
-  public static final String SERIALIZED_NAME_DISPLAY_NAME = "display_name";
-  @SerializedName(SERIALIZED_NAME_DISPLAY_NAME)
+public class ProductPrice {
+  public static final String SERIALIZED_NAME_CURRENCY = "currency";
+  @SerializedName(SERIALIZED_NAME_CURRENCY)
   @javax.annotation.Nullable
-  private String displayName;
+  private String currency;
 
-  public static final String SERIALIZED_NAME_BIOGRAPHY = "biography";
-  @SerializedName(SERIALIZED_NAME_BIOGRAPHY)
+  public static final String SERIALIZED_NAME_AMOUNT = "amount";
+  @SerializedName(SERIALIZED_NAME_AMOUNT)
   @javax.annotation.Nullable
-  private String biography;
+  private Double amount;
 
-  public UpdateProfile() {
+  public static final String SERIALIZED_NAME_RENEWAL = "renewal";
+  @SerializedName(SERIALIZED_NAME_RENEWAL)
+  @javax.annotation.Nullable
+  private Double renewal;
+
+  public ProductPrice() {
   }
 
-  public UpdateProfile displayName(@javax.annotation.Nullable String displayName) {
-    this.displayName = displayName;
+  public ProductPrice currency(@javax.annotation.Nullable String currency) {
+    this.currency = currency;
     return this;
   }
 
   /**
-   * Get displayName
-   * @return displayName
+   * Get currency
+   * @return currency
    */
   @javax.annotation.Nullable
-  public String getDisplayName() {
-    return displayName;
+  public String getCurrency() {
+    return currency;
   }
 
-  public void setDisplayName(@javax.annotation.Nullable String displayName) {
-    this.displayName = displayName;
+  public void setCurrency(@javax.annotation.Nullable String currency) {
+    this.currency = currency;
   }
 
 
-  public UpdateProfile biography(@javax.annotation.Nullable String biography) {
-    this.biography = biography;
+  public ProductPrice amount(@javax.annotation.Nullable Double amount) {
+    this.amount = amount;
     return this;
   }
 
   /**
-   * Get biography
-   * @return biography
+   * Get amount
+   * @return amount
    */
   @javax.annotation.Nullable
-  public String getBiography() {
-    return biography;
+  public Double getAmount() {
+    return amount;
   }
 
-  public void setBiography(@javax.annotation.Nullable String biography) {
-    this.biography = biography;
+  public void setAmount(@javax.annotation.Nullable Double amount) {
+    this.amount = amount;
+  }
+
+
+  public ProductPrice renewal(@javax.annotation.Nullable Double renewal) {
+    this.renewal = renewal;
+    return this;
+  }
+
+  /**
+   * Get renewal
+   * @return renewal
+   */
+  @javax.annotation.Nullable
+  public Double getRenewal() {
+    return renewal;
+  }
+
+  public void setRenewal(@javax.annotation.Nullable Double renewal) {
+    this.renewal = renewal;
   }
 
 
@@ -111,9 +135,10 @@ public class UpdateProfile {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    UpdateProfile updateProfile = (UpdateProfile) o;
-    return Objects.equals(this.displayName, updateProfile.displayName) &&
-        Objects.equals(this.biography, updateProfile.biography);
+    ProductPrice productPrice = (ProductPrice) o;
+    return Objects.equals(this.currency, productPrice.currency) &&
+        Objects.equals(this.amount, productPrice.amount) &&
+        Objects.equals(this.renewal, productPrice.renewal);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -122,7 +147,7 @@ public class UpdateProfile {
 
   @Override
   public int hashCode() {
-    return Objects.hash(displayName, biography);
+    return Objects.hash(currency, amount, renewal);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -135,9 +160,10 @@ public class UpdateProfile {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class UpdateProfile {\n");
-    sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
-    sb.append("    biography: ").append(toIndentedString(biography)).append("\n");
+    sb.append("class ProductPrice {\n");
+    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+    sb.append("    renewal: ").append(toIndentedString(renewal)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -160,47 +186,45 @@ public class UpdateProfile {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("display_name");
-    openapiFields.add("biography");
+    openapiFields.add("currency");
+    openapiFields.add("amount");
+    openapiFields.add("renewal");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("display_name");
+    openapiRequiredFields.add("currency");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to UpdateProfile
+   * @throws IOException if the JSON Element is invalid with respect to ProductPrice
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!UpdateProfile.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UpdateProfile is not found in the empty JSON string", UpdateProfile.openapiRequiredFields.toString()));
+        if (!ProductPrice.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ProductPrice is not found in the empty JSON string", ProductPrice.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!UpdateProfile.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `UpdateProfile` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!ProductPrice.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ProductPrice` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : UpdateProfile.openapiRequiredFields) {
+      for (String requiredField : ProductPrice.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("display_name") != null && !jsonObj.get("display_name").isJsonNull()) && !jsonObj.get("display_name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `display_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("display_name").toString()));
-      }
-      if ((jsonObj.get("biography") != null && !jsonObj.get("biography").isJsonNull()) && !jsonObj.get("biography").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `biography` to be a primitive type in the JSON string but got `%s`", jsonObj.get("biography").toString()));
+      if ((jsonObj.get("currency") != null && !jsonObj.get("currency").isJsonNull()) && !jsonObj.get("currency").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `currency` to be a primitive type in the JSON string but got `%s`", jsonObj.get("currency").toString()));
       }
   }
 
@@ -208,22 +232,22 @@ public class UpdateProfile {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!UpdateProfile.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'UpdateProfile' and its subtypes
+       if (!ProductPrice.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ProductPrice' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<UpdateProfile> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(UpdateProfile.class));
+       final TypeAdapter<ProductPrice> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ProductPrice.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<UpdateProfile>() {
+       return (TypeAdapter<T>) new TypeAdapter<ProductPrice>() {
            @Override
-           public void write(JsonWriter out, UpdateProfile value) throws IOException {
+           public void write(JsonWriter out, ProductPrice value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public UpdateProfile read(JsonReader in) throws IOException {
+           public ProductPrice read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -234,18 +258,18 @@ public class UpdateProfile {
   }
 
   /**
-   * Create an instance of UpdateProfile given an JSON string
+   * Create an instance of ProductPrice given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of UpdateProfile
-   * @throws IOException if the JSON string is invalid with respect to UpdateProfile
+   * @return An instance of ProductPrice
+   * @throws IOException if the JSON string is invalid with respect to ProductPrice
    */
-  public static UpdateProfile fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, UpdateProfile.class);
+  public static ProductPrice fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ProductPrice.class);
   }
 
   /**
-   * Convert an instance of UpdateProfile to an JSON string
+   * Convert an instance of ProductPrice to an JSON string
    *
    * @return JSON string
    */

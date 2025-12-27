@@ -19,12 +19,8 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.tribufu.generated.models.UserType;
 import java.io.IOException;
-import java.time.OffsetDateTime;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 
@@ -52,15 +48,10 @@ import java.util.Set;
 import com.tribufu.generated.JSON;
 
 /**
- * UserInfo
+ * CreateUser
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-27T09:52:38.593392400-03:00[America/Sao_Paulo]", comments = "Generator version: 7.12.0")
-public class UserInfo {
-  public static final String SERIALIZED_NAME_ID = "id";
-  @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nullable
-  private String id;
-
+public class CreateUser {
   public static final String SERIALIZED_NAME_UUID = "uuid";
   @SerializedName(SERIALIZED_NAME_UUID)
   @javax.annotation.Nullable
@@ -68,7 +59,7 @@ public class UserInfo {
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_DISPLAY_NAME = "display_name";
@@ -81,15 +72,10 @@ public class UserInfo {
   @javax.annotation.Nullable
   private String email;
 
-  public static final String SERIALIZED_NAME_EMAIL_VERIFIED = "email_verified";
-  @SerializedName(SERIALIZED_NAME_EMAIL_VERIFIED)
+  public static final String SERIALIZED_NAME_PASSWORD = "password";
+  @SerializedName(SERIALIZED_NAME_PASSWORD)
   @javax.annotation.Nullable
-  private Boolean emailVerified;
-
-  public static final String SERIALIZED_NAME_TYPE = "type";
-  @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nullable
-  private UserType type;
+  private String password;
 
   public static final String SERIALIZED_NAME_LANGUAGE = "language";
   @SerializedName(SERIALIZED_NAME_LANGUAGE)
@@ -106,49 +92,15 @@ public class UserInfo {
   @javax.annotation.Nullable
   private String currency;
 
-  public static final String SERIALIZED_NAME_PHOTO_URL = "photo_url";
-  @SerializedName(SERIALIZED_NAME_PHOTO_URL)
+  public static final String SERIALIZED_NAME_IP_ADDRESS = "ip_address";
+  @SerializedName(SERIALIZED_NAME_IP_ADDRESS)
   @javax.annotation.Nullable
-  private String photoUrl;
+  private String ipAddress;
 
-  public static final String SERIALIZED_NAME_PERMISSIONS = "permissions";
-  @SerializedName(SERIALIZED_NAME_PERMISSIONS)
-  @javax.annotation.Nullable
-  private List<String> permissions;
-
-  public static final String SERIALIZED_NAME_CREATED = "created";
-  @SerializedName(SERIALIZED_NAME_CREATED)
-  @javax.annotation.Nullable
-  private OffsetDateTime created;
-
-  public static final String SERIALIZED_NAME_UPDATED = "updated";
-  @SerializedName(SERIALIZED_NAME_UPDATED)
-  @javax.annotation.Nullable
-  private OffsetDateTime updated;
-
-  public UserInfo() {
+  public CreateUser() {
   }
 
-  public UserInfo id(@javax.annotation.Nullable String id) {
-    this.id = id;
-    return this;
-  }
-
-  /**
-   * Get id
-   * @return id
-   */
-  @javax.annotation.Nullable
-  public String getId() {
-    return id;
-  }
-
-  public void setId(@javax.annotation.Nullable String id) {
-    this.id = id;
-  }
-
-
-  public UserInfo uuid(@javax.annotation.Nullable UUID uuid) {
+  public CreateUser uuid(@javax.annotation.Nullable UUID uuid) {
     this.uuid = uuid;
     return this;
   }
@@ -167,7 +119,7 @@ public class UserInfo {
   }
 
 
-  public UserInfo name(@javax.annotation.Nullable String name) {
+  public CreateUser name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -176,17 +128,17 @@ public class UserInfo {
    * Get name
    * @return name
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public UserInfo displayName(@javax.annotation.Nullable String displayName) {
+  public CreateUser displayName(@javax.annotation.Nullable String displayName) {
     this.displayName = displayName;
     return this;
   }
@@ -205,7 +157,7 @@ public class UserInfo {
   }
 
 
-  public UserInfo email(@javax.annotation.Nullable String email) {
+  public CreateUser email(@javax.annotation.Nullable String email) {
     this.email = email;
     return this;
   }
@@ -224,45 +176,26 @@ public class UserInfo {
   }
 
 
-  public UserInfo emailVerified(@javax.annotation.Nullable Boolean emailVerified) {
-    this.emailVerified = emailVerified;
+  public CreateUser password(@javax.annotation.Nullable String password) {
+    this.password = password;
     return this;
   }
 
   /**
-   * Get emailVerified
-   * @return emailVerified
+   * Get password
+   * @return password
    */
   @javax.annotation.Nullable
-  public Boolean getEmailVerified() {
-    return emailVerified;
+  public String getPassword() {
+    return password;
   }
 
-  public void setEmailVerified(@javax.annotation.Nullable Boolean emailVerified) {
-    this.emailVerified = emailVerified;
-  }
-
-
-  public UserInfo type(@javax.annotation.Nullable UserType type) {
-    this.type = type;
-    return this;
-  }
-
-  /**
-   * Get type
-   * @return type
-   */
-  @javax.annotation.Nullable
-  public UserType getType() {
-    return type;
-  }
-
-  public void setType(@javax.annotation.Nullable UserType type) {
-    this.type = type;
+  public void setPassword(@javax.annotation.Nullable String password) {
+    this.password = password;
   }
 
 
-  public UserInfo language(@javax.annotation.Nullable String language) {
+  public CreateUser language(@javax.annotation.Nullable String language) {
     this.language = language;
     return this;
   }
@@ -281,7 +214,7 @@ public class UserInfo {
   }
 
 
-  public UserInfo timezone(@javax.annotation.Nullable String timezone) {
+  public CreateUser timezone(@javax.annotation.Nullable String timezone) {
     this.timezone = timezone;
     return this;
   }
@@ -300,7 +233,7 @@ public class UserInfo {
   }
 
 
-  public UserInfo currency(@javax.annotation.Nullable String currency) {
+  public CreateUser currency(@javax.annotation.Nullable String currency) {
     this.currency = currency;
     return this;
   }
@@ -319,87 +252,22 @@ public class UserInfo {
   }
 
 
-  public UserInfo photoUrl(@javax.annotation.Nullable String photoUrl) {
-    this.photoUrl = photoUrl;
+  public CreateUser ipAddress(@javax.annotation.Nullable String ipAddress) {
+    this.ipAddress = ipAddress;
     return this;
   }
 
   /**
-   * Get photoUrl
-   * @return photoUrl
+   * Get ipAddress
+   * @return ipAddress
    */
   @javax.annotation.Nullable
-  public String getPhotoUrl() {
-    return photoUrl;
+  public String getIpAddress() {
+    return ipAddress;
   }
 
-  public void setPhotoUrl(@javax.annotation.Nullable String photoUrl) {
-    this.photoUrl = photoUrl;
-  }
-
-
-  public UserInfo permissions(@javax.annotation.Nullable List<String> permissions) {
-    this.permissions = permissions;
-    return this;
-  }
-
-  public UserInfo addPermissionsItem(String permissionsItem) {
-    if (this.permissions == null) {
-      this.permissions = new ArrayList<>();
-    }
-    this.permissions.add(permissionsItem);
-    return this;
-  }
-
-  /**
-   * Get permissions
-   * @return permissions
-   */
-  @javax.annotation.Nullable
-  public List<String> getPermissions() {
-    return permissions;
-  }
-
-  public void setPermissions(@javax.annotation.Nullable List<String> permissions) {
-    this.permissions = permissions;
-  }
-
-
-  public UserInfo created(@javax.annotation.Nullable OffsetDateTime created) {
-    this.created = created;
-    return this;
-  }
-
-  /**
-   * Get created
-   * @return created
-   */
-  @javax.annotation.Nullable
-  public OffsetDateTime getCreated() {
-    return created;
-  }
-
-  public void setCreated(@javax.annotation.Nullable OffsetDateTime created) {
-    this.created = created;
-  }
-
-
-  public UserInfo updated(@javax.annotation.Nullable OffsetDateTime updated) {
-    this.updated = updated;
-    return this;
-  }
-
-  /**
-   * Get updated
-   * @return updated
-   */
-  @javax.annotation.Nullable
-  public OffsetDateTime getUpdated() {
-    return updated;
-  }
-
-  public void setUpdated(@javax.annotation.Nullable OffsetDateTime updated) {
-    this.updated = updated;
+  public void setIpAddress(@javax.annotation.Nullable String ipAddress) {
+    this.ipAddress = ipAddress;
   }
 
 
@@ -412,21 +280,16 @@ public class UserInfo {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    UserInfo userInfo = (UserInfo) o;
-    return Objects.equals(this.id, userInfo.id) &&
-        Objects.equals(this.uuid, userInfo.uuid) &&
-        Objects.equals(this.name, userInfo.name) &&
-        Objects.equals(this.displayName, userInfo.displayName) &&
-        Objects.equals(this.email, userInfo.email) &&
-        Objects.equals(this.emailVerified, userInfo.emailVerified) &&
-        Objects.equals(this.type, userInfo.type) &&
-        Objects.equals(this.language, userInfo.language) &&
-        Objects.equals(this.timezone, userInfo.timezone) &&
-        Objects.equals(this.currency, userInfo.currency) &&
-        Objects.equals(this.photoUrl, userInfo.photoUrl) &&
-        Objects.equals(this.permissions, userInfo.permissions) &&
-        Objects.equals(this.created, userInfo.created) &&
-        Objects.equals(this.updated, userInfo.updated);
+    CreateUser createUser = (CreateUser) o;
+    return Objects.equals(this.uuid, createUser.uuid) &&
+        Objects.equals(this.name, createUser.name) &&
+        Objects.equals(this.displayName, createUser.displayName) &&
+        Objects.equals(this.email, createUser.email) &&
+        Objects.equals(this.password, createUser.password) &&
+        Objects.equals(this.language, createUser.language) &&
+        Objects.equals(this.timezone, createUser.timezone) &&
+        Objects.equals(this.currency, createUser.currency) &&
+        Objects.equals(this.ipAddress, createUser.ipAddress);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -435,7 +298,7 @@ public class UserInfo {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, uuid, name, displayName, email, emailVerified, type, language, timezone, currency, photoUrl, permissions, created, updated);
+    return Objects.hash(uuid, name, displayName, email, password, language, timezone, currency, ipAddress);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -448,21 +311,16 @@ public class UserInfo {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class UserInfo {\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("class CreateUser {\n");
     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
-    sb.append("    emailVerified: ").append(toIndentedString(emailVerified)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    password: ").append("*").append("\n");
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
     sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
-    sb.append("    photoUrl: ").append(toIndentedString(photoUrl)).append("\n");
-    sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
-    sb.append("    created: ").append(toIndentedString(created)).append("\n");
-    sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
+    sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -485,20 +343,15 @@ public class UserInfo {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("id");
     openapiFields.add("uuid");
     openapiFields.add("name");
     openapiFields.add("display_name");
     openapiFields.add("email");
-    openapiFields.add("email_verified");
-    openapiFields.add("type");
+    openapiFields.add("password");
     openapiFields.add("language");
     openapiFields.add("timezone");
     openapiFields.add("currency");
-    openapiFields.add("photo_url");
-    openapiFields.add("permissions");
-    openapiFields.add("created");
-    openapiFields.add("updated");
+    openapiFields.add("ip_address");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -509,37 +362,34 @@ public class UserInfo {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to UserInfo
+   * @throws IOException if the JSON Element is invalid with respect to CreateUser
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!UserInfo.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UserInfo is not found in the empty JSON string", UserInfo.openapiRequiredFields.toString()));
+        if (!CreateUser.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in CreateUser is not found in the empty JSON string", CreateUser.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!UserInfo.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `UserInfo` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!CreateUser.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `CreateUser` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : UserInfo.openapiRequiredFields) {
+      for (String requiredField : CreateUser.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
-      }
       if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
       }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+      if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("display_name") != null && !jsonObj.get("display_name").isJsonNull()) && !jsonObj.get("display_name").isJsonPrimitive()) {
@@ -548,9 +398,8 @@ public class UserInfo {
       if ((jsonObj.get("email") != null && !jsonObj.get("email").isJsonNull()) && !jsonObj.get("email").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));
       }
-      // validate the optional field `type`
-      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
-        UserType.validateJsonElement(jsonObj.get("type"));
+      if ((jsonObj.get("password") != null && !jsonObj.get("password").isJsonNull()) && !jsonObj.get("password").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `password` to be a primitive type in the JSON string but got `%s`", jsonObj.get("password").toString()));
       }
       if ((jsonObj.get("language") != null && !jsonObj.get("language").isJsonNull()) && !jsonObj.get("language").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `language` to be a primitive type in the JSON string but got `%s`", jsonObj.get("language").toString()));
@@ -561,12 +410,8 @@ public class UserInfo {
       if ((jsonObj.get("currency") != null && !jsonObj.get("currency").isJsonNull()) && !jsonObj.get("currency").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `currency` to be a primitive type in the JSON string but got `%s`", jsonObj.get("currency").toString()));
       }
-      if ((jsonObj.get("photo_url") != null && !jsonObj.get("photo_url").isJsonNull()) && !jsonObj.get("photo_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `photo_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("photo_url").toString()));
-      }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("permissions") != null && !jsonObj.get("permissions").isJsonNull() && !jsonObj.get("permissions").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `permissions` to be an array in the JSON string but got `%s`", jsonObj.get("permissions").toString()));
+      if ((jsonObj.get("ip_address") != null && !jsonObj.get("ip_address").isJsonNull()) && !jsonObj.get("ip_address").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `ip_address` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ip_address").toString()));
       }
   }
 
@@ -574,22 +419,22 @@ public class UserInfo {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!UserInfo.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'UserInfo' and its subtypes
+       if (!CreateUser.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'CreateUser' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<UserInfo> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(UserInfo.class));
+       final TypeAdapter<CreateUser> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(CreateUser.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<UserInfo>() {
+       return (TypeAdapter<T>) new TypeAdapter<CreateUser>() {
            @Override
-           public void write(JsonWriter out, UserInfo value) throws IOException {
+           public void write(JsonWriter out, CreateUser value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public UserInfo read(JsonReader in) throws IOException {
+           public CreateUser read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -600,18 +445,18 @@ public class UserInfo {
   }
 
   /**
-   * Create an instance of UserInfo given an JSON string
+   * Create an instance of CreateUser given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of UserInfo
-   * @throws IOException if the JSON string is invalid with respect to UserInfo
+   * @return An instance of CreateUser
+   * @throws IOException if the JSON string is invalid with respect to CreateUser
    */
-  public static UserInfo fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, UserInfo.class);
+  public static CreateUser fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, CreateUser.class);
   }
 
   /**
-   * Convert an instance of UserInfo to an JSON string
+   * Convert an instance of CreateUser to an JSON string
    *
    * @return JSON string
    */

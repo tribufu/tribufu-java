@@ -24,22 +24,18 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Gets or Sets GrantType
+ * Gets or Sets ProductType
  */
-@JsonAdapter(GrantType.Adapter.class)
-public enum GrantType {
+@JsonAdapter(ProductType.Adapter.class)
+public enum ProductType {
   
-  AUTHORIZATION_CODE("authorization_code"),
+  PRODUCT("product"),
   
-  CLIENT_CREDENTIALS("client_credentials"),
-  
-  PASSWORD("password"),
-  
-  REFRESH_TOKEN("refresh_token");
+  SUBSCRIPTION("subscription");
 
   private String value;
 
-  GrantType(String value) {
+  ProductType(String value) {
     this.value = value;
   }
 
@@ -52,8 +48,8 @@ public enum GrantType {
     return String.valueOf(value);
   }
 
-  public static GrantType fromValue(String value) {
-    for (GrantType b : GrantType.values()) {
+  public static ProductType fromValue(String value) {
+    for (ProductType b : ProductType.values()) {
       if (b.value.equals(value)) {
         return b;
       }
@@ -61,22 +57,22 @@ public enum GrantType {
     throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
-  public static class Adapter extends TypeAdapter<GrantType> {
+  public static class Adapter extends TypeAdapter<ProductType> {
     @Override
-    public void write(final JsonWriter jsonWriter, final GrantType enumeration) throws IOException {
+    public void write(final JsonWriter jsonWriter, final ProductType enumeration) throws IOException {
       jsonWriter.value(enumeration.getValue());
     }
 
     @Override
-    public GrantType read(final JsonReader jsonReader) throws IOException {
+    public ProductType read(final JsonReader jsonReader) throws IOException {
       String value = jsonReader.nextString();
-      return GrantType.fromValue(value);
+      return ProductType.fromValue(value);
     }
   }
 
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
     String value = jsonElement.getAsString();
-    GrantType.fromValue(value);
+    ProductType.fromValue(value);
   }
 }
 

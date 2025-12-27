@@ -19,8 +19,8 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.tribufu.generated.models.LoginProvider;
 import java.io.IOException;
+import java.net.URI;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -49,10 +49,10 @@ import java.util.Set;
 import com.tribufu.generated.JSON;
 
 /**
- * Account
+ * StorageFile
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-27T09:52:38.593392400-03:00[America/Sao_Paulo]", comments = "Generator version: 7.12.0")
-public class Account {
+public class StorageFile {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   @javax.annotation.Nullable
@@ -63,25 +63,30 @@ public class Account {
   @javax.annotation.Nullable
   private String name;
 
-  public static final String SERIALIZED_NAME_PROVIDER = "provider";
-  @SerializedName(SERIALIZED_NAME_PROVIDER)
-  @javax.annotation.Nonnull
-  private LoginProvider provider;
-
-  public static final String SERIALIZED_NAME_USER_ID = "user_id";
-  @SerializedName(SERIALIZED_NAME_USER_ID)
+  public static final String SERIALIZED_NAME_CONTENT_TYPE = "content_type";
+  @SerializedName(SERIALIZED_NAME_CONTENT_TYPE)
   @javax.annotation.Nullable
-  private String userId;
+  private String contentType;
 
-  public static final String SERIALIZED_NAME_AUTHORIZED = "authorized";
-  @SerializedName(SERIALIZED_NAME_AUTHORIZED)
+  public static final String SERIALIZED_NAME_URL = "url";
+  @SerializedName(SERIALIZED_NAME_URL)
   @javax.annotation.Nullable
-  private Boolean authorized;
+  private URI url;
 
-  public static final String SERIALIZED_NAME_FIELDS = "fields";
-  @SerializedName(SERIALIZED_NAME_FIELDS)
+  public static final String SERIALIZED_NAME_SIZE = "size";
+  @SerializedName(SERIALIZED_NAME_SIZE)
   @javax.annotation.Nullable
-  private Object fields = null;
+  private Long size;
+
+  public static final String SERIALIZED_NAME_HASH = "hash";
+  @SerializedName(SERIALIZED_NAME_HASH)
+  @javax.annotation.Nullable
+  private String hash;
+
+  public static final String SERIALIZED_NAME_ETAG = "etag";
+  @SerializedName(SERIALIZED_NAME_ETAG)
+  @javax.annotation.Nullable
+  private String etag;
 
   public static final String SERIALIZED_NAME_CREATED = "created";
   @SerializedName(SERIALIZED_NAME_CREATED)
@@ -93,10 +98,10 @@ public class Account {
   @javax.annotation.Nullable
   private OffsetDateTime updated;
 
-  public Account() {
+  public StorageFile() {
   }
 
-  public Account id(@javax.annotation.Nullable String id) {
+  public StorageFile id(@javax.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
@@ -115,7 +120,7 @@ public class Account {
   }
 
 
-  public Account name(@javax.annotation.Nullable String name) {
+  public StorageFile name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -134,83 +139,102 @@ public class Account {
   }
 
 
-  public Account provider(@javax.annotation.Nonnull LoginProvider provider) {
-    this.provider = provider;
+  public StorageFile contentType(@javax.annotation.Nullable String contentType) {
+    this.contentType = contentType;
     return this;
   }
 
   /**
-   * Get provider
-   * @return provider
-   */
-  @javax.annotation.Nonnull
-  public LoginProvider getProvider() {
-    return provider;
-  }
-
-  public void setProvider(@javax.annotation.Nonnull LoginProvider provider) {
-    this.provider = provider;
-  }
-
-
-  public Account userId(@javax.annotation.Nullable String userId) {
-    this.userId = userId;
-    return this;
-  }
-
-  /**
-   * Get userId
-   * @return userId
+   * Get contentType
+   * @return contentType
    */
   @javax.annotation.Nullable
-  public String getUserId() {
-    return userId;
+  public String getContentType() {
+    return contentType;
   }
 
-  public void setUserId(@javax.annotation.Nullable String userId) {
-    this.userId = userId;
+  public void setContentType(@javax.annotation.Nullable String contentType) {
+    this.contentType = contentType;
   }
 
 
-  public Account authorized(@javax.annotation.Nullable Boolean authorized) {
-    this.authorized = authorized;
+  public StorageFile url(@javax.annotation.Nullable URI url) {
+    this.url = url;
     return this;
   }
 
   /**
-   * Get authorized
-   * @return authorized
+   * Get url
+   * @return url
    */
   @javax.annotation.Nullable
-  public Boolean getAuthorized() {
-    return authorized;
+  public URI getUrl() {
+    return url;
   }
 
-  public void setAuthorized(@javax.annotation.Nullable Boolean authorized) {
-    this.authorized = authorized;
+  public void setUrl(@javax.annotation.Nullable URI url) {
+    this.url = url;
   }
 
 
-  public Account fields(@javax.annotation.Nullable Object fields) {
-    this.fields = fields;
+  public StorageFile size(@javax.annotation.Nullable Long size) {
+    this.size = size;
     return this;
   }
 
   /**
-   * Get fields
-   * @return fields
+   * Get size
+   * @return size
    */
   @javax.annotation.Nullable
-  public Object getFields() {
-    return fields;
+  public Long getSize() {
+    return size;
   }
 
-  public void setFields(@javax.annotation.Nullable Object fields) {
-    this.fields = fields;
+  public void setSize(@javax.annotation.Nullable Long size) {
+    this.size = size;
   }
 
 
-  public Account created(@javax.annotation.Nullable OffsetDateTime created) {
+  public StorageFile hash(@javax.annotation.Nullable String hash) {
+    this.hash = hash;
+    return this;
+  }
+
+  /**
+   * Get hash
+   * @return hash
+   */
+  @javax.annotation.Nullable
+  public String getHash() {
+    return hash;
+  }
+
+  public void setHash(@javax.annotation.Nullable String hash) {
+    this.hash = hash;
+  }
+
+
+  public StorageFile etag(@javax.annotation.Nullable String etag) {
+    this.etag = etag;
+    return this;
+  }
+
+  /**
+   * Get etag
+   * @return etag
+   */
+  @javax.annotation.Nullable
+  public String getEtag() {
+    return etag;
+  }
+
+  public void setEtag(@javax.annotation.Nullable String etag) {
+    this.etag = etag;
+  }
+
+
+  public StorageFile created(@javax.annotation.Nullable OffsetDateTime created) {
     this.created = created;
     return this;
   }
@@ -229,7 +253,7 @@ public class Account {
   }
 
 
-  public Account updated(@javax.annotation.Nullable OffsetDateTime updated) {
+  public StorageFile updated(@javax.annotation.Nullable OffsetDateTime updated) {
     this.updated = updated;
     return this;
   }
@@ -257,15 +281,16 @@ public class Account {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Account account = (Account) o;
-    return Objects.equals(this.id, account.id) &&
-        Objects.equals(this.name, account.name) &&
-        Objects.equals(this.provider, account.provider) &&
-        Objects.equals(this.userId, account.userId) &&
-        Objects.equals(this.authorized, account.authorized) &&
-        Objects.equals(this.fields, account.fields) &&
-        Objects.equals(this.created, account.created) &&
-        Objects.equals(this.updated, account.updated);
+    StorageFile storageFile = (StorageFile) o;
+    return Objects.equals(this.id, storageFile.id) &&
+        Objects.equals(this.name, storageFile.name) &&
+        Objects.equals(this.contentType, storageFile.contentType) &&
+        Objects.equals(this.url, storageFile.url) &&
+        Objects.equals(this.size, storageFile.size) &&
+        Objects.equals(this.hash, storageFile.hash) &&
+        Objects.equals(this.etag, storageFile.etag) &&
+        Objects.equals(this.created, storageFile.created) &&
+        Objects.equals(this.updated, storageFile.updated);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -274,7 +299,7 @@ public class Account {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, provider, userId, authorized, fields, created, updated);
+    return Objects.hash(id, name, contentType, url, size, hash, etag, created, updated);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -287,13 +312,14 @@ public class Account {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Account {\n");
+    sb.append("class StorageFile {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
-    sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
-    sb.append("    authorized: ").append(toIndentedString(authorized)).append("\n");
-    sb.append("    fields: ").append(toIndentedString(fields)).append("\n");
+    sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
+    sb.append("    url: ").append(toIndentedString(url)).append("\n");
+    sb.append("    size: ").append(toIndentedString(size)).append("\n");
+    sb.append("    hash: ").append(toIndentedString(hash)).append("\n");
+    sb.append("    etag: ").append(toIndentedString(etag)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
     sb.append("}");
@@ -320,42 +346,44 @@ public class Account {
     openapiFields = new HashSet<String>();
     openapiFields.add("id");
     openapiFields.add("name");
-    openapiFields.add("provider");
-    openapiFields.add("user_id");
-    openapiFields.add("authorized");
-    openapiFields.add("fields");
+    openapiFields.add("content_type");
+    openapiFields.add("url");
+    openapiFields.add("size");
+    openapiFields.add("hash");
+    openapiFields.add("etag");
     openapiFields.add("created");
     openapiFields.add("updated");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("id");
-    openapiRequiredFields.add("provider");
+    openapiRequiredFields.add("name");
+    openapiRequiredFields.add("content_type");
+    openapiRequiredFields.add("url");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to Account
+   * @throws IOException if the JSON Element is invalid with respect to StorageFile
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!Account.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Account is not found in the empty JSON string", Account.openapiRequiredFields.toString()));
+        if (!StorageFile.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in StorageFile is not found in the empty JSON string", StorageFile.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!Account.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Account` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!StorageFile.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `StorageFile` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : Account.openapiRequiredFields) {
+      for (String requiredField : StorageFile.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
@@ -367,10 +395,17 @@ public class Account {
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
-      // validate the required field `provider`
-      LoginProvider.validateJsonElement(jsonObj.get("provider"));
-      if ((jsonObj.get("user_id") != null && !jsonObj.get("user_id").isJsonNull()) && !jsonObj.get("user_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `user_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("user_id").toString()));
+      if ((jsonObj.get("content_type") != null && !jsonObj.get("content_type").isJsonNull()) && !jsonObj.get("content_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `content_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("content_type").toString()));
+      }
+      if ((jsonObj.get("url") != null && !jsonObj.get("url").isJsonNull()) && !jsonObj.get("url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
+      }
+      if ((jsonObj.get("hash") != null && !jsonObj.get("hash").isJsonNull()) && !jsonObj.get("hash").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `hash` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hash").toString()));
+      }
+      if ((jsonObj.get("etag") != null && !jsonObj.get("etag").isJsonNull()) && !jsonObj.get("etag").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `etag` to be a primitive type in the JSON string but got `%s`", jsonObj.get("etag").toString()));
       }
   }
 
@@ -378,22 +413,22 @@ public class Account {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!Account.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'Account' and its subtypes
+       if (!StorageFile.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'StorageFile' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<Account> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(Account.class));
+       final TypeAdapter<StorageFile> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(StorageFile.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<Account>() {
+       return (TypeAdapter<T>) new TypeAdapter<StorageFile>() {
            @Override
-           public void write(JsonWriter out, Account value) throws IOException {
+           public void write(JsonWriter out, StorageFile value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public Account read(JsonReader in) throws IOException {
+           public StorageFile read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -404,18 +439,18 @@ public class Account {
   }
 
   /**
-   * Create an instance of Account given an JSON string
+   * Create an instance of StorageFile given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of Account
-   * @throws IOException if the JSON string is invalid with respect to Account
+   * @return An instance of StorageFile
+   * @throws IOException if the JSON string is invalid with respect to StorageFile
    */
-  public static Account fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, Account.class);
+  public static StorageFile fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, StorageFile.class);
   }
 
   /**
-   * Convert an instance of Account to an JSON string
+   * Convert an instance of StorageFile to an JSON string
    *
    * @return JSON string
    */
