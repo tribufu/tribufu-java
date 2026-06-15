@@ -18,7 +18,6 @@ src/main/java/com/tribufu/generated/auth/Authentication.java
 src/main/java/com/tribufu/generated/auth/HttpBasicAuth.java
 src/main/java/com/tribufu/generated/auth/HttpBearerAuth.java
 src/main/java/com/tribufu/generated/models/AbstractOpenApiSchema.java
-src/main/java/com/tribufu/generated/models/Account.java
 src/main/java/com/tribufu/generated/models/Application.java
 src/main/java/com/tribufu/generated/models/ApplicationType.java
 src/main/java/com/tribufu/generated/models/AuthorizeRequest.java
@@ -29,6 +28,7 @@ src/main/java/com/tribufu/generated/models/CodeChallengeMethod.java
 src/main/java/com/tribufu/generated/models/CodeResponse.java
 src/main/java/com/tribufu/generated/models/CreateUser.java
 src/main/java/com/tribufu/generated/models/CryptoViewModel.java
+src/main/java/com/tribufu/generated/models/ExternalAccount.java
 src/main/java/com/tribufu/generated/models/Game.java
 src/main/java/com/tribufu/generated/models/GameServer.java
 src/main/java/com/tribufu/generated/models/GameServerCluster.java
@@ -40,12 +40,12 @@ src/main/java/com/tribufu/generated/models/GroupApplication.java
 src/main/java/com/tribufu/generated/models/GroupMember.java
 src/main/java/com/tribufu/generated/models/GroupRank.java
 src/main/java/com/tribufu/generated/models/HashViewModel.java
+src/main/java/com/tribufu/generated/models/IdentityProviderType.java
 src/main/java/com/tribufu/generated/models/IntrospectRequest.java
 src/main/java/com/tribufu/generated/models/IntrospectResponse.java
 src/main/java/com/tribufu/generated/models/IpAddress.java
 src/main/java/com/tribufu/generated/models/LeaderboardItem.java
 src/main/java/com/tribufu/generated/models/LeaderboardOrder.java
-src/main/java/com/tribufu/generated/models/LoginProvider.java
 src/main/java/com/tribufu/generated/models/ModelPackage.java
 src/main/java/com/tribufu/generated/models/PackageRelease.java
 src/main/java/com/tribufu/generated/models/Product.java

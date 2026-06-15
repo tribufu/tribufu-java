@@ -24,20 +24,28 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Gets or Sets GroupRank
+ * Gets or Sets IdentityProviderType
  */
-@JsonAdapter(GroupRank.Adapter.class)
-public enum GroupRank {
+@JsonAdapter(IdentityProviderType.Adapter.class)
+public enum IdentityProviderType {
   
-  MEMBER("member"),
+  STEAM("steam"),
   
-  LEADER("leader"),
+  EPIC("epic"),
   
-  OWNER("owner");
+  DISCORD("discord"),
+  
+  MICROSOFT("microsoft"),
+  
+  PLAYSTATION("playstation"),
+  
+  GOOGLE("google"),
+  
+  APPLE("apple");
 
   private String value;
 
-  GroupRank(String value) {
+  IdentityProviderType(String value) {
     this.value = value;
   }
 
@@ -50,8 +58,8 @@ public enum GroupRank {
     return String.valueOf(value);
   }
 
-  public static GroupRank fromValue(String value) {
-    for (GroupRank b : GroupRank.values()) {
+  public static IdentityProviderType fromValue(String value) {
+    for (IdentityProviderType b : IdentityProviderType.values()) {
       if (b.value.equals(value)) {
         return b;
       }
@@ -59,22 +67,22 @@ public enum GroupRank {
     throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
-  public static class Adapter extends TypeAdapter<GroupRank> {
+  public static class Adapter extends TypeAdapter<IdentityProviderType> {
     @Override
-    public void write(final JsonWriter jsonWriter, final GroupRank enumeration) throws IOException {
+    public void write(final JsonWriter jsonWriter, final IdentityProviderType enumeration) throws IOException {
       jsonWriter.value(enumeration.getValue());
     }
 
     @Override
-    public GroupRank read(final JsonReader jsonReader) throws IOException {
+    public IdentityProviderType read(final JsonReader jsonReader) throws IOException {
       String value = jsonReader.nextString();
-      return GroupRank.fromValue(value);
+      return IdentityProviderType.fromValue(value);
     }
   }
 
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
     String value = jsonElement.getAsString();
-    GroupRank.fromValue(value);
+    IdentityProviderType.fromValue(value);
   }
 }
 
