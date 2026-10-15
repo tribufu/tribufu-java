@@ -7,7 +7,7 @@ Java SDK to access Tribufu APIs and services.
 [![Discord Chat][discord-badge]][discord-url]
 
 [mvn-badge]: https://img.shields.io/badge/releases-mvn-orange.svg
-[mvn-url]: https://mvn.tribufu.com/#/releases/com/tribufu/Tribufu
+[mvn-url]: https://mvn.tribufu.com/#/releases/com/tribufu/tribufu
 [mit-badge]: https://img.shields.io/badge/license-MIT-blue.svg
 [mit-url]: https://github.com/Tribufu/TribufuJava/blob/main/LICENSE.txt
 [discord-badge]: https://img.shields.io/discord/276504514616623104.svg?logo=discord&style=flat-square
