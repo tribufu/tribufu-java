@@ -3,7 +3,7 @@
 $env:JAVA_POST_PROCESS_FILE = ""
 
 java -jar ./vendor/openapi-generator/openapi-generator-cli.jar generate `
-    -i https://api.tribufu.com/openapi.json `
+    -i http://localhost:46400/openapi.json `
     -g java `
     -o . `
     --global-property apis,models,supportingFiles,apiDocs=false,modelDocs=false,apiTests=false,modelTests=false `
